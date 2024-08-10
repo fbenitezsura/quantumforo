@@ -1,9 +1,10 @@
 import Image from "next/image";
+import ContainerHome from "@components/template/home/ContainerHome";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between">
-      <img src="/landing.jpg" className="h-full w-full"></img>
+    <main className="min-h-screen">
+      <ContainerHome />
     </main>
   );
 }
