@@ -12,6 +12,7 @@ interface ButtonProps {
   variant?: 'default' | 'primary' | 'secondary' | 'danger';
   className?: string;
   onClick?: () => void;
+  children: any;
 }
 
 const CustomButton: React.FC<ButtonProps> = ({ children, variant = 'default', className, onClick }) => {
