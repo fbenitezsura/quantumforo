@@ -1,6 +1,13 @@
+'use client'
 import ViewSectionShop from '@components/organism/home/SectionShop/index';
+import { getAllStore } from '@clean/application/redux/store/store.slice';
+import { useAppDispatch, useAppSelector } from '@clean/application/redux/hook';
+import { useEffect } from 'react';
 
 const SectionShop = () => {
+
+  const dispatch = useAppDispatch();
+  const store = useAppSelector((state) => state.Store);
 
   const categories = [
     {
@@ -86,6 +93,10 @@ const SectionShop = () => {
       ],
     },
   ];
+
+  useEffect(() => {
+    dispatch(getAllStore());
+  }, []);
 
   return (
     <ViewSectionShop

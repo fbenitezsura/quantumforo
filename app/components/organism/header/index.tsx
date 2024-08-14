@@ -25,8 +25,8 @@ const Header: React.FC = ({
                 <div className="flex flex-col items-end space-y-4">
                     {/* Primera fila de botones - Desktop */}
                     <div className="hidden md:flex space-x-4">
-                        <button className="text-white">Registro</button>
-                        <button className="bg-blue-500 text-white px-4 py-2 rounded">Quiero Emprender</button>
+                        <button className="text-white">Iniciar Sesion</button>
+                        <button className="bg-blue-500 text-white px-4 py-2 rounded">Quiero Registrarme</button>
                     </div>
 
                     {/* Segunda fila de botones - Desktop */}

@@ -29,10 +29,12 @@ const ViewSectionShop = ({
                     <TabPanels className="mt-3">
                         {storesData.map(({ name, posts }) => (
                             <TabPanel key={name} className="rounded-xl bg-white/5 p-3">
-                                <ul className="grid grid-cols-12 gap-4">
-                                    {posts.map((post) => {
+                                <ul
+                                className="grid grid-cols-12 gap-4">
+                                    {posts.map((post, postIndex) => {
                                         return (
                                             <StoreCard
+                                                key={postIndex}
                                                 name={post.title}
                                                 description={post.description}
                                                 categories={post.categories}

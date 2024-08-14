@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import ContainerHeader from '@components/template/header/index';
 import "./globals.css";
 import clsx from 'clsx';
+import { ReduxProvider } from "@providers/redux-provider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -23,8 +24,10 @@ export default function RootLayout({
           'bg-[#DADADA]',
           inter.className
         )}>
-        <ContainerHeader />
-        {children}
+        <ReduxProvider>
+          <ContainerHeader />
+          {children}
+        </ReduxProvider>
       </body>
     </html>
   );
