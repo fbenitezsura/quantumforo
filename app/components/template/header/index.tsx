@@ -1,8 +1,17 @@
 'use client';
 import ViewHeader from '@components/organism/header/index'
 import { useEffect, useState } from 'react';
+import { useAppSelector, useAppDispatch } from '@/clean/application/redux/hook';
+import { Logout } from '@/clean/application/redux/auth/auth.slice';
 
 const ContainerHeader = () => {
+
+    const dispatch = useAppDispatch();
+
+    const {
+        userLogged,
+        userInfo
+    } = useAppSelector((state) => state.Auth);
 
     const [isOpen, setIsOpen] = useState(false);
 
@@ -33,12 +42,18 @@ const ContainerHeader = () => {
         };
     }, [oldScroll]);
 
+    const handleLogout = () => {
+        dispatch(Logout());
+    } 
 
     return (
         <ViewHeader 
         isOpen={isOpen}
         toggleMenu={toggleMenu}
         isFixed={isFixed}
+        userLogged={userLogged}
+        userInfo={userInfo}
+        handleLogout={handleLogout}
         />
     );
 }

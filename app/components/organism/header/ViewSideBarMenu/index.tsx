@@ -3,7 +3,10 @@ import SiderbarAccountMenuMobile from '@components/molecules/header/siderbarMenu
 
 const ViewSideBarMenu: React.FC<any> = ({
     isOpen,
-    toggleMenu
+    toggleMenu,
+    userLogged,
+    userInfo,
+    handleLogout
 }) => {
 
     return (
@@ -11,7 +14,9 @@ const ViewSideBarMenu: React.FC<any> = ({
         isAccountMenuMobileOpen={isOpen}
         openAccountMenuMobileSidebar={()=>{ console.log('') }}
         closeAccountMenuMobileSidebar={()=>{ toggleMenu() }}
-        handleLogout={()=>{ console.log('') }}
+        handleLogout={handleLogout}
+        userLogged={userLogged}
+        userInfo={userInfo}
         />
     );
 }

@@ -2,7 +2,7 @@ export class newInstanceFetch {
   private baseUrl: string | undefined;
   private abortController?: AbortController;
 
-  constructor(baseUrl : string | undefined) {
+  constructor(baseUrl: string | undefined) {
     this.baseUrl = baseUrl;
     if (typeof window !== 'undefined' && 'AbortController' in window) {
       this.abortController = new AbortController();
@@ -26,9 +26,19 @@ export class newInstanceFetch {
     return headers;
   }
 
+  private async makeHeadersStrapi() {
+    const headers = {
+      "Authorization": 'bearer ' + process.env.NEXT_PUBLIC_STRAPI_TOKEN,
+      'Content-Type': 'application/json',
+      "Cache-Control": "max-age = 0"
+    }
+
+    return headers;
+  }
+
   public async fetch(url: string, options: RequestInit): Promise<any> {
 
-    options.headers = await this.makeHeaders();
+    options.headers = await this.makeHeadersStrapi();
 
     if (this.abortController) {
       options.signal = this.abortController.signal;

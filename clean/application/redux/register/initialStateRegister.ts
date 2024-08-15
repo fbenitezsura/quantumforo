@@ -1,5 +1,3 @@
-import { PreRegisterRequest } from '@clean/application/redux/adapters/Register/RegisterRequest';
-
 interface RegisterState {
   loadingRegister: boolean;
   loadingPreRegister: boolean;

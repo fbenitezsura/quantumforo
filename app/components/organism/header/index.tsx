@@ -3,11 +3,16 @@ import React from 'react';
 import HambugerSvg from '@components/atom/svg/hamburger';
 import XClose from '@components/atom/svg/x-close';
 import ContainerSideBarMenu from '../../template/header/ContainerSideBarMenu';
+import Link from 'next/link';
+import MenuUser from '@components/molecules/header/MenuUser';
 
 const Header: React.FC = ({
     isOpen,
     toggleMenu,
-    isFixed
+    isFixed,
+    userLogged,
+    userInfo,
+    handleLogout
 }) => {
 
     return (
@@ -19,25 +24,53 @@ const Header: React.FC = ({
         >
             <div className="max-w-7xl mx-auto flex justify-between items-center h-[80px]">
                 {/* Logo */}
-                <img src="/logo/logo.jpg" alt="Logo" className="h-full" />
+                <Link href="/">
+                    <img src="/logo/logo.jpg" alt="Logo" className="h-[80px]" />
+                </Link>
+
 
                 {/* Botones */}
                 <div className="flex flex-col items-end space-y-4">
                     {/* Primera fila de botones - Desktop */}
                     <div className="hidden md:flex space-x-4">
-                        <button className="text-white">Iniciar Sesion</button>
-                        <button className="bg-blue-500 text-white px-4 py-2 rounded">Quiero Registrarme</button>
+                        {userLogged ? (
+                            <MenuUser
+                            handleLogout={handleLogout}
+                            userInfo={userInfo}
+                            />
+                        ) : (
+                            <>
+                                <Link href="/account/login">
+                                    <button className="text-white">Iniciar Sesion</button>
+                                </Link>
+                                <Link href="/account/register">
+                                    <button className="bg-blue-500 text-white px-4 py-2 rounded">Quiero Registrarme</button>
+                                </Link>
+                            </>
+                        )}
+
                     </div>
 
                     {/* Segunda fila de botones - Desktop */}
                     <div className="hidden md:flex space-x-4">
-                        <button className="text-white px-4 py-2">Explorar Emprendimientos</button>
-                        <button className="text-white px-4 py-2">Categorias</button>
-                        <button className="text-white px-4 py-2">Sobre Nosotros</button>
-                        <button className="text-white px-4 py-2">Eventos</button>
-                        <button className="text-white px-4 py-2">Testimonios</button>
-                        <button className="text-white px-4 py-2">Contacto</button>
-                        <button className="text-white px-4 py-2">Blog</button>
+                        <Link href="/emprendimientos">
+                            <button className="text-white px-4 py-2">Emprendimientos</button>
+                        </Link>
+                        <Link href="/nosotros">
+                            <button className="text-white px-4 py-2">Sobre Nosotros</button>
+                        </Link>
+                        <Link href="/eventos">
+                            <button className="text-white px-4 py-2">Eventos</button>
+                        </Link>
+                        <Link href="/testimonios">
+                            <button className="text-white px-4 py-2">Testimonios</button>
+                        </Link>
+                        <Link href="/contacto">
+                            <button className="text-white px-4 py-2">Contacto</button>
+                        </Link>
+                        <Link href="/blog">
+                            <button className="text-white px-4 py-2">Blog</button>
+                        </Link>
                     </div>
                 </div>
 
@@ -58,6 +91,9 @@ const Header: React.FC = ({
                 <ContainerSideBarMenu
                     isOpen={isOpen}
                     toggleMenu={toggleMenu}
+                    userInfo={userInfo}
+                    userLogged={userLogged}
+                    handleLogout={handleLogout}
                 />
             )}
         </header>

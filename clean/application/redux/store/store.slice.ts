@@ -1,4 +1,4 @@
-import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
+import { createSlice, createAsyncThunk, PayloadAction  } from '@reduxjs/toolkit';
 import { initialState } from '@clean/application/redux/store/initialStateStore';
 import QuantumForoUseCase from '@clean/domain/useCase/quantumForoUseCase';
 import QuantumForoRepositoryImpl from '@clean/infrastructure/repositories/quantumForoRepositoryImpl';
@@ -10,18 +10,27 @@ export const getAllStore = createAsyncThunk(
   'storeSlice/getAllStore',
   async (arg, thunkAPI) => {
     const kind = 'getAllStore';
-    let processCompleted;
-    const preRegisterResult = await quantumService.getAllStore();
-    preRegisterResult.fold(
-      (err) => {
-        processCompleted = false;
-        return [];
-      },
-      (allStore) => {
-        processCompleted = true;
-        return allStore;
-      }
-    );
+    try {
+      const state = thunkAPI.getState() as { storeSlice: typeof initialState };
+      const selectedCategory = state.Store.categorySelected; 
+      const storeResult = await quantumService.getAllStore(selectedCategory);
+      let result;
+      storeResult.fold(
+        (err) => {
+          console.log(err)
+          thunkAPI.rejectWithValue({ kind, error: err.message });
+          result = [];
+        },
+        (allStore) => {
+          result = allStore;
+        }
+      );
+
+      return result;
+    } catch (error) {
+      console.log(error)
+      return thunkAPI.rejectWithValue({ kind, error: (error as Error).message });
+    }
   }
 );
 
@@ -29,7 +38,9 @@ export const storeSlice = createSlice({
   name: 'storeSlice',
   initialState,
   reducers: {
-    // Your synchronous reducers here
+    setCategorySelected: (state, action: PayloadAction<string>) => {
+      state.categorySelected = action.payload;
+    },
   },
   extraReducers: (builder) => {
     builder
@@ -45,5 +56,7 @@ export const storeSlice = createSlice({
       });
   },
 });
+
+export const { setCategorySelected } = storeSlice.actions;
 
 export default storeSlice.reducer;

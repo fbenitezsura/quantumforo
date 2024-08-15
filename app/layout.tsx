@@ -4,6 +4,7 @@ import ContainerHeader from '@components/template/header/index';
 import "./globals.css";
 import clsx from 'clsx';
 import { ReduxProvider } from "@providers/redux-provider";
+import PopUpNotifications from "@components/molecules/PopUpNotification/index";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -27,6 +28,7 @@ export default function RootLayout({
         <ReduxProvider>
           <ContainerHeader />
           {children}
+          <PopUpNotifications />
         </ReduxProvider>
       </body>
     </html>

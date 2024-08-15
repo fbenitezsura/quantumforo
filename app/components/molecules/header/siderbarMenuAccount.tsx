@@ -1,6 +1,7 @@
 import { Fragment } from "react";
 import { Dialog, Transition } from "@headlessui/react";
-import LinkElement from '@components/atom/link/index';
+import Link from "next/link";
+import MenuUser from "./MenuUser";
 
 interface UserInfoType {
   customerId: number;
@@ -18,16 +19,20 @@ interface BalanceType {
 }
 
 type SidebarAccountMenuMobileProps = {
+  userLogged: boolean,
+  userInfo: any,
   handleLogout: () => void,
   isAccountMenuMobileOpen: boolean,
   openAccountMenuMobileSidebar: () => void,
-  closeAccountMenuMobileSidebar: () => void,
+  closeAccountMenuMobileSidebar: () => void
 };
-const SidebarAccountMenuMobile = ({
+const SiderbarAccountMenuMobile = ({
+  userLogged,
+  userInfo,
   handleLogout,
   isAccountMenuMobileOpen,
   openAccountMenuMobileSidebar,
-  closeAccountMenuMobileSidebar,
+  closeAccountMenuMobileSidebar
 }: SidebarAccountMenuMobileProps) => {
 
   return (
@@ -90,19 +95,67 @@ const SidebarAccountMenuMobile = ({
                       </svg>
                     </div>
                     <div className="text-white ">
-                      <div className="flex items-center gap-4 mb-4">
-                        <div
-                        onClick={()=>{
-                          closeAccountMenuMobileSidebar();
-                        }}
-                        className="rounded-full w-10 h-10 p-1 md:hidden block relative">
-                          <div className="opacity-30 mix-blend-normal absolute left-0 top-0 rounded-full w-10 h-10 border-blur border-2 border-solid border-l-0 border-b-0"></div>
+                      <div className="flex justify-center items-center gap-4 mb-4">
+                        <img src="/logo/logo.jpg" alt="Logo" className="h-[80px]" />
+                      </div>
+                      <div className="flex justify-center items-center mb-3.5">
+                        <div className="flex flex-col justify-start items-center text-[#ffffff70] text-[14px]">
+                          {userLogged ? (
+                            <div className="w-full flex">
+                              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M17.982 18.725A7.488 7.488 0 0 0 12 15.75a7.488 7.488 0 0 0-5.982 2.975m11.963 0a9 9 0 1 0-11.963 0m11.963 0A8.966 8.966 0 0 1 12 21a8.966 8.966 0 0 1-5.982-2.275M15 9.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+                              </svg>
+                              <p className="ml-2">{userInfo?.username}</p>
+                            </div>
+                          ) : (
+                            <>
+                              <Link href="/account/login">
+                                <button
+                                  onClick={() => {
+                                    closeAccountMenuMobileSidebar()
+                                  }}
+                                  className="text-white">Iniciar Sesion</button>
+                              </Link>
+                              <Link
+                                onClick={() => {
+                                  closeAccountMenuMobileSidebar()
+                                }}
+                                href="/account/register">
+                                <button className="bg-blue-500 text-white mt-3 px-4 py-2 rounded">Quiero Registrarme</button>
+                              </Link>
+                            </>
+                          )}
+
                         </div>
                       </div>
-                      <div className="flex justify-between items-center mb-3.5">
-                        <div className="flex items-center text-[#ffffff70] text-[14px]">
-                          <img src="/assets/bonus.png" alt="" className="mr-1.5" />{" "}
-                          Bonos
+                      <div className="flex justify-start items-center mb-3.5">
+                        <div className="flex flex-col space-x-4 mt-10 w-full">
+                          <Link href="/emprendimientos">
+                            <button className="text-white text-left px-4 py-2 w-auto">Emprendimientos</button>
+                          </Link>
+                          <Link href="/nosotros">
+                            <button className="text-white px-4 py-2">Sobre Nosotros</button>
+                          </Link>
+                          <Link href="/eventos">
+                            <button className="text-white px-4 py-2">Eventos</button>
+                          </Link>
+                          <Link href="/testimonios">
+                            <button className="text-white px-4 py-2">Testimonios</button>
+                          </Link>
+                          <Link href="/contacto">
+                            <button className="text-white px-4 py-2">Contacto</button>
+                          </Link>
+                          <Link href="/blog">
+                            <button className="text-white px-4 py-2">Blog</button>
+                          </Link>
+                          {userLogged && (
+                            <button
+                              className="p-3 rounded-md bg-red-300 mt-5"
+                              onClick={handleLogout}
+                            >
+                              Cerrar Sesión
+                            </button>
+                          )}
                         </div>
                       </div>
                     </div>
@@ -117,4 +170,4 @@ const SidebarAccountMenuMobile = ({
   );
 };
 
-export default SidebarAccountMenuMobile;
+export default SiderbarAccountMenuMobile;
