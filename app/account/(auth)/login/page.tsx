@@ -1,4 +1,4 @@
-import LoginTemplate from "@components/template/login/ContainerLogin";
+import LoginTemplate from "@/app/components/Templates/login/ContainerLogin";
 import { Metadata } from "next"
 
 export const metadata: Metadata = {

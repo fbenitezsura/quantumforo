@@ -1,0 +1,26 @@
+[
+  {
+    "index": 10010101,
+    "id": "9e3e3994-a3ed-47ca-as014-d4483884cfe2",
+    "featuredImage": "https://images.unsplash.com/photo-1440778303588-435521a205bc?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80",
+    "title": "Lenovo’s smarter devices stoke professional passions ",
+    "desc": "Aenean lectus. Pellentesque eget nunc. Donec quis orci eget orci vehicula condimentum.",
+    "date": "May 20, 2021",
+    "href": "/single-gallery/this-is-single-slug",
+    "commentCount": 11,
+    "viewdCount": 2504,
+    "readingTime": 2,
+    "bookmark": { "count": 3007, "isBookmarked": false },
+    "like": { "count": 3366, "isLiked": true },
+    "authorId": 3,
+    "categoriesId": [3, 12],
+    "postType": "gallery",
+    "galleryImgs": [
+      "https://images.pexels.com/photos/2363814/pexels-photo-2363814.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+      "https://images.pexels.com/photos/4352244/pexels-photo-4352244.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+      "https://images.pexels.com/photos/3023211/pexels-photo-3023211.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+      "https://images.pexels.com/photos/4982737/pexels-photo-4982737.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+      "https://images.pexels.com/photos/4066850/pexels-photo-4066850.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+    ]
+  }
+]

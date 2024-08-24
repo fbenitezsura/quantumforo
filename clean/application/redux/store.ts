@@ -8,7 +8,18 @@ import Modal from './modal/modal.slice';
 import PopUpNotifications from './popUpNotifications/popUpNotification.slice';
 import Register from './register/register.slice';
 import Store from './store/store.slice';
-
+import Banners from './banners/banners.slice';
+import Categories from './categories/categories.slice';
+import Currency from './currency/currency.slice';
+import Footer from './footer/footer.slice';
+import Language from './language/language.slice';
+import Layout from './layout/layout.slice';
+import Message from './messages/messages.slice';
+import GeoLocation from './geoLocation/geolocation.slice';
+import Navbar from './navbar/navbar.slice';
+import Redirect from './redirect/redirect.slice';
+import Sidebar from './sidebar/sidebar.slice';
+import Notes from './notes/notes.slice';
 
 const rootReducer = combineReducers({
   Auth,
@@ -16,6 +27,18 @@ const rootReducer = combineReducers({
   PopUpNotifications,
   Register,
   Store,
+  Banners,
+  Categories,
+  Language,
+  Layout,
+  Footer,
+  Message,
+  Navbar,
+  GeoLocation,
+  Redirect,
+  Sidebar,
+  Currency,
+  Notes
 });
 
 const makeConfiguredStore = (reducer) => {

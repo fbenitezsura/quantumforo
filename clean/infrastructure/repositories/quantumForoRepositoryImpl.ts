@@ -76,6 +76,32 @@ class QuantumForoRepositoryImpl implements QuantumForoRepository {
     });
   }
 
+  async getStoreById(id: string): Promise<Either<DataError, any>> {
+    return new Promise(async (resolver, _reject) => {
+      try {
+        const storeResult = await apiQForo.get(
+          `/stores/${id}`
+        );
+        resolver(Either.right(storeResult));
+      } catch (error) {
+        resolver(Either.left({ kind: 'UnexpectedError', error }));
+      }
+    });
+  }
+
+  async getEntrepreneurById(id: string): Promise<Either<DataError, any>> {
+    return new Promise(async (resolver, _reject) => {
+      try {
+        const entrepreneurResult = await apiQForo.get(
+          `/entrepreneurs/${id}`
+        );
+        resolver(Either.right(entrepreneurResult));
+      } catch (error) {
+        resolver(Either.left({ kind: 'UnexpectedError', error }));
+      }
+    });
+  }
+
 
 }
 

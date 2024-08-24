@@ -1,11 +1,7 @@
-const PageProfile = () => {
-
+import ContainerCategories from '@components/Templates/Categories/ContainerCategories';
+const CategoryPage = () => {
     return (
-        <div>
-
-            hola perfil
-        </div>
+        <ContainerCategories />
     )
 }
-
-export default PageProfile;
+export default CategoryPage;

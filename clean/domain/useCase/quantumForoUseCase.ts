@@ -34,6 +34,24 @@ class QuantumForoUseCase implements QuantumForoRepository {
   async resetPassword(password: string,passwordConfirmation :string, code: string): Promise<Either<DataError, any>> {
     return this.qfRepo.resetPassword(password,passwordConfirmation,code);
   } 
+  async getStoreById(id: string): Promise<Either<DataError, any>> {
+    const storeResult = EitherAsync.fromPromise(this.qfRepo.getStoreById(id));
+    return storeResult
+      .flatMap(async (details) => {
+        const cleanDetails = transformDetailData(details);
+        return Either.right(cleanDetails);
+      })
+      .run();
+  }
+  async getEntrepreneurById(id: string): Promise<Either<DataError, any>> {
+    const storeResult = EitherAsync.fromPromise(this.qfRepo.getEntrepreneurById(id));
+    return storeResult
+      .flatMap(async (details) => {
+        const cleanDetails = transformDetailLeaderBoardMenu(details);
+        return Either.right(cleanDetails);
+      })
+      .run();
+  }
 }
 
 export default QuantumForoUseCase;

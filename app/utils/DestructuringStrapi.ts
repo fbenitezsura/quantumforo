@@ -1,11 +1,25 @@
 export function transformDetailData(dataObject) {
-  return dataObject.data.map(item => {
+  // Si es un array, aplica la transformación para arrays
+  if (Array.isArray(dataObject.data)) {
+    return dataObject.data.map(item => {
+      return {
+        ...item.attributes,
+        id: item.id,
+      };
+    });
+  } 
+  // Si es un objeto, aplica la transformación para objetos
+  else if (typeof dataObject.data === 'object' && dataObject.data !== null) {
+    const { attributes, id } = dataObject.data;
     return {
-      ...item.attributes,
-      id: item.id,
+      ...attributes,
+      id,
     };
-  });
-
+  } 
+  // Si no es ni array ni objeto, devuelve null o lanza un error según tu preferencia
+  else {
+    return null;
+  }
 }
 
 export function transformDetailLeaderBoardMenu(dataObject) {
@@ -33,6 +47,21 @@ export function transformDetailLeaderBoardMenu(dataObject) {
     vertical: cleanVertical
   };
 
+}
+
+export function transformDetailDataWithPagination(dataObject) {
+  const transformedData = dataObject.data.map(item => {
+    return {
+      ...item.attributes,
+      id: item.id,
+    };
+  });
+  return {
+    data: transformedData,
+    pagination: {
+      total: dataObject.meta.pagination.total
+    }
+  };
 }
 
 export function transformCountriesData(dataObject) {

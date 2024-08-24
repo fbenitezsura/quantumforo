@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import ContainerHeader from '@components/template/header/index';
+import ContainerHeader from '@/app/components/Templates/header/index';
 import "./globals.css";
 import clsx from 'clsx';
 import { ReduxProvider } from "@providers/redux-provider";
-import PopUpNotifications from "@components/molecules/PopUpNotification/index";
+import PopUpNotifications from "@/app/components/Molecules/PopUpNotification/index";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -22,7 +22,7 @@ export default function RootLayout({
     <html lang="en">
       <body
         className={clsx(
-          'bg-[#DADADA]',
+          'bg-[#FFFFFF]',
           inter.className
         )}>
         <ReduxProvider>

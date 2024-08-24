@@ -23,6 +23,10 @@
       "@providers/*": ["./app/providers/*"],
       "@utils/*": ["./app/utils/*"],
       "@clean/*": ["./clean/*"],
+      "@hooks/*": ["./app/hooks/*"],
+      "@data/*": ["./app/data/*"],
+      "@images/*": ["./app/images/*"],
+      "@contains/*": ["./app/contains/*"],
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],

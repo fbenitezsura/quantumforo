@@ -1,5 +1,5 @@
 import React from 'react';
-import TabItem from '@components/atom/TabItem/index';
+import TabItem from '@/app/components/Atoms/TabItem/index';
 
 type Post = {
   id: number;
