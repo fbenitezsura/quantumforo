@@ -1,5 +1,5 @@
 'use client'
-import ViewCategories from '@/app/components/Organisms/Categories/ViewCategories';
+import ViewCategories from '@components/Organisms/Categories/ViewCategories';
 import { useAppDispatch, useAppSelector } from '@clean/application/redux/hook';
 import { useEffect } from 'react';
 import { getCategories } from '@clean/application/redux/categories/categories.slice';
