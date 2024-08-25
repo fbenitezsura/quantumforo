@@ -1,6 +1,6 @@
 'use client'
 import { useRouter } from "next/navigation"
-import ViewRegister from '@/app/components/Organisms/register/ViewRegister';
+import ViewRegister from '@components/Organisms/register/ViewRegister';
 import { useAppDispatch, useAppSelector } from '@/clean/application/redux/hook';
 import { registerCustomer, resetRegister } from '@/clean/application/redux/register/register.slice';
 import { useEffect, useState } from 'react';

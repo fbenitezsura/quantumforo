@@ -1,4 +1,4 @@
-import SiderbarAccountMenuMobile from '@/app/components/Molecules/header/siderbarMenuAccount';
+import SiderbarAccountMenuMobile from '@components/Molecules/header/siderbarMenuAccount';
 
 
 const ViewSideBarMenu: React.FC<any> = ({

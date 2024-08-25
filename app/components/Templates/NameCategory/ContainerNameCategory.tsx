@@ -1,5 +1,5 @@
 'use client'
-import ViewNameCategory from '@/app/components/Organisms/NameCategory/ViewNameCategory';
+import ViewNameCategory from '@components/Organisms/NameCategory/ViewNameCategory';
 import { useEffect, useState } from 'react';
 import { useAppSelector, useAppDispatch } from '@clean/application/redux/hook';
 import { getNotesByCategory, changePageNoteForCategory } from '@clean/application/redux/notes/notes.slice';

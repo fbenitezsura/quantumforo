@@ -1,4 +1,4 @@
-import ContainerRegister from '@/app/components/Templates/register/ContainerRegister';
+import ContainerRegister from '@components/Templates/register/ContainerRegister';
 
 const Register = () => {
 

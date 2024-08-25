@@ -1,4 +1,4 @@
-import ViewStore from '@/app/components/Organisms/store/ViewStore';
+import ViewStore from '@components/Organisms/store/ViewStore';
 
 const ContainerStore = ({
     detailStore

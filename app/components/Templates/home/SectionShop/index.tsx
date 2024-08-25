@@ -1,5 +1,5 @@
 'use client'
-import ViewSectionShop from '@/app/components/Organisms/home/SectionShop/index';
+import ViewSectionShop from '@components/Organisms/home/SectionShop/index';
 import { getAllStore } from '@clean/application/redux/store/store.slice';
 import { useAppDispatch, useAppSelector } from '@clean/application/redux/hook';
 import { useEffect } from 'react';

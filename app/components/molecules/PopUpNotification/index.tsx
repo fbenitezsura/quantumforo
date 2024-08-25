@@ -2,10 +2,10 @@
 import { useAppDispatch, useAppSelector } from '@clean/application/redux/hook';
 import { hidePopUp } from '@clean/application/redux/popUpNotifications/popUpNotification.slice';
 import { useEffect } from 'react';
-import SVGCheck from '@/app/components/Atoms/svg/SVGCheck';
-import SVGAlertSolid from '@/app/components/Atoms/svg/SVGAlertSolid';
-import SVGX from '@/app/components/Atoms/svg/SVGX';
-import PopUpConfirmation from '@/app/components/Molecules/PopUpNotification/popUpConfirmation';
+import SVGCheck from '@components/Atoms/svg/SVGCheck';
+import SVGAlertSolid from '@components/Atoms/svg/SVGAlertSolid';
+import SVGX from '@components/Atoms/svg/SVGX';
+import PopUpConfirmation from '@components/Molecules/PopUpNotification/popUpConfirmation';
 interface PopUpNotificationsProps {
 }
 

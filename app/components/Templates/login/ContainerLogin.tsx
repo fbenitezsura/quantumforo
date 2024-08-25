@@ -1,7 +1,7 @@
 "use client"
 import { useRouter } from "next/navigation"
 import { useEffect } from "react"
-import ViewLogin from '@/app/components/Organisms/login/ViewLogin';
+import ViewLogin from '@components/Organisms/login/ViewLogin';
 import { useDispatch, useSelector } from "react-redux";
 import { Login } from "@clean/application/redux/auth/auth.slice";
 

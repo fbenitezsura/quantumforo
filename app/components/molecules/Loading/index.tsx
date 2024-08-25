@@ -1,8 +1,8 @@
 // Loading.tsx
 import React from 'react';
-import LoaderWrapper from '@/app/components/Atoms/loader/wrapper';
-import LoaderSpinner from '@/app/components/Atoms/loader/spinner';
-import LoadingText from '@/app/components/Atoms/loader/loadingText';
+import LoaderWrapper from '@components/Atoms/loader/wrapper';
+import LoaderSpinner from '@components/Atoms/loader/spinner';
+import LoadingText from '@components/Atoms/loader/loadingText';
 
 type LoadingProps = {
   text?: string;

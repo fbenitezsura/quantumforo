@@ -1,10 +1,10 @@
 // components/Header.tsx
 import React from 'react';
-import HambugerSvg from '@/app/components/Atoms/svg/hamburger';
-import XClose from '@/app/components/Atoms/svg/x-close';
+import HambugerSvg from '@components/Atoms/svg/hamburger';
+import XClose from '@components/Atoms/svg/x-close';
 import ContainerSideBarMenu from '../../Templates/header/ContainerSideBarMenu';
 import Link from 'next/link';
-import MenuUser from '@/app/components/Molecules/header/MenuUser';
+import MenuUser from '@components/Molecules/header/MenuUser';
 
 const Header: React.FC = ({
     isOpen,

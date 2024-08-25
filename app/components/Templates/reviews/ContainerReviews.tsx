@@ -1,4 +1,4 @@
-import ViewReviews from '@/app/components/Organisms/reviews/ViewReviews';
+import ViewReviews from '@components/Organisms/reviews/ViewReviews';
 
 const ContainerReview = () => {
 

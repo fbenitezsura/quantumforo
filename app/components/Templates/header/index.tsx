@@ -1,5 +1,5 @@
 'use client';
-import ViewHeader from '@/app/components/Organisms/header/index';
+import ViewHeader from '@components/Organisms/header/index';
 import { usePathname } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import { useAppSelector, useAppDispatch } from '@/clean/application/redux/hook';

@@ -1,4 +1,4 @@
-import ContainerBroker from '@/app/components/Templates/broker/ContainerBroker';
+import ContainerBroker from '@components/Templates/broker/ContainerBroker';
 
 import React from 'react';
 

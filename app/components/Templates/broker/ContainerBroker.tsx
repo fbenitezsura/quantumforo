@@ -1,4 +1,4 @@
-import ViewBroker from '@/app/components/Organisms/broker/ViewBroker';
+import ViewBroker from '@components/Organisms/broker/ViewBroker';
 
 const ContainerBroker = () => {
 

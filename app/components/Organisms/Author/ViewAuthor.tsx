@@ -6,7 +6,7 @@ import NavItem from "@components/Atoms/NavItem/NavItem";
 /*import SocialsList from "@components/Molecules/SocialsList/SocialsList";
 import ArchiveFilterListBox from "@components/Molecules/ArchiveFilterListBox/ArchiveFilterListBox";
 import SectionSubscribe2 from "@components/Molecules/SectionSubscribe2/SectionSubscribe2";*/
-import Card11 from "@/app/components/Molecules/Card11/index";
+import Card11 from "@components/Molecules/Card11/index";
 /*import BackgroundSection from "@components/Atoms/BackgroundSection/BackgroundSection";
 import SectionGridCategoryBox from "@components/Molecules/SectionGridCategoryBox/SectionGridCategoryBox";
 import ButtonSecondary from "@components/Atoms/Button/ButtonSecondary";

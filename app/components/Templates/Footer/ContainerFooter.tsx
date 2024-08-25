@@ -6,7 +6,7 @@ import dynamic from 'next/dynamic';
 import { useEffect, useState } from 'react';
 const CACHE_FOOTER = 15; // min
 const ViewFooter = dynamic(
-  () => import('@/app/components/Organisms/Footer/ViewFooter')
+  () => import('@components/Organisms/Footer/ViewFooter')
 )
 const ContainerFooter = () => {
 

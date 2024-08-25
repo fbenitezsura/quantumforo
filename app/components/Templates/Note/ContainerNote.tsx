@@ -1,6 +1,6 @@
 'use client'
 import dynamic from 'next/dynamic';
-const ViewNote = dynamic(() => import('@/app/components/Organisms/Note/ViewNote'), {
+const ViewNote = dynamic(() => import('@components/Organisms/Note/ViewNote'), {
   loading: () => <p>Loading...</p>,
 })
 

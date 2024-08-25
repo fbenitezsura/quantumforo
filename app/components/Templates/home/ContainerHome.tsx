@@ -1,4 +1,4 @@
-import ViewHome from '@/app/components/Organisms/home/index';
+import ViewHome from '@components/Organisms/home/index';
 
 const ContainerHome = () => {
 

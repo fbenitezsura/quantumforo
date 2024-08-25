@@ -1,4 +1,4 @@
-import ContainerReviews from '@/app/components/Templates/reviews/ContainerReviews';
+import ContainerReviews from '@components/Templates/reviews/ContainerReviews';
 
 const ViewStore = ({
     detailStore

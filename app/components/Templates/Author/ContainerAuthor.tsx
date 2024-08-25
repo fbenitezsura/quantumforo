@@ -1,5 +1,5 @@
 'use client'
-import ViewAuthor from '@/app/components/Organisms/Author/ViewAuthor';
+import ViewAuthor from '@components/Organisms/Author/ViewAuthor';
 import { useState } from 'react';
 import { useAppSelector, useAppDispatch } from '@clean/application/redux/hook';
 

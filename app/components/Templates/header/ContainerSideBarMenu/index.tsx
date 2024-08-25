@@ -1,4 +1,4 @@
-import ViewSideBarMenu from "@/app/components/Organisms/header/ViewSideBarMenu";
+import ViewSideBarMenu from "@components/Organisms/header/ViewSideBarMenu";
 
 const ContainerSideBarMenu = ({
     isOpen,

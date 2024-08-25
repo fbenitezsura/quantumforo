@@ -1,6 +1,6 @@
 import React from 'react';
-import NoDataText from '@/app/components/Atoms/noDataText/index';
-import NoDataIcon from '@/app/components/Atoms/svg/noDataIcon';
+import NoDataText from '@components/Atoms/noDataText/index';
+import NoDataIcon from '@components/Atoms/svg/noDataIcon';
 
 type NoDataProps = {
   message?: string;

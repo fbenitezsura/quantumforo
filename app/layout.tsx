@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import ContainerHeader from '@/app/components/Templates/header/index';
+import ContainerHeader from '@components/Templates/header/index';
 import "./globals.css";
 import clsx from 'clsx';
 import { ReduxProvider } from "@providers/redux-provider";
-import PopUpNotifications from "@/app/components/Molecules/PopUpNotification/index";
+import PopUpNotifications from "@components/Molecules/PopUpNotification/index";
 
 const inter = Inter({ subsets: ["latin"] });
 

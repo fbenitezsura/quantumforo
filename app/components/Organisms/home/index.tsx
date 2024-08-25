@@ -1,5 +1,5 @@
-import Banner from '@/app/components/Molecules/Banner/index';
-import SectionShop from '@/app/components/Templates/home/SectionShop/index';
+import Banner from '@components/Molecules/Banner/index';
+import SectionShop from '@components/Templates/home/SectionShop/index';
 
 const ViewHome = () => {
     return (
