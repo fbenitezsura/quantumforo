@@ -1,4 +1,3 @@
-'use client'
 /*import Pagination from "@components/Atoms/Pagination/Pagination";
 import ButtonPrimary from "@components/Atoms/Button/ButtonPrimary";*/
 import Nav from "@components/Atoms/Nav/Nav";
