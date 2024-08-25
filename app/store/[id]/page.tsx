@@ -1,6 +1,6 @@
 import QuantumForoUseCase from '@clean/domain/useCase/quantumForoUseCase';
 import QuantumForoRepositoryImpl from '@clean/infrastructure/repositories/quantumForoRepositoryImpl';
-import ContainerStore from '@/app/components/Templates/store/ContainerStore';
+import ContainerStore from '@/app/components/Templates/SingleStore/ContainerStore';
 
 const quantumForoRepo = new QuantumForoRepositoryImpl();
 const quantumForoService = new QuantumForoUseCase(quantumForoRepo);

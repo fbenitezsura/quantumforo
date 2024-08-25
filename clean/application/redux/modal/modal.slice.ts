@@ -2,7 +2,8 @@ import { createSlice } from '@reduxjs/toolkit';
 import { initialState } from '@clean/application/redux/modal/initialStateModal';
 
 export const MODAL_TYPES = {
-  LOGIN_MODAL: 'LOGIN_MODAL'
+  LOGIN_MODAL: 'LOGIN_MODAL',
+  SEARCH_MODAL: 'SEARCH_MODAL',
 };
 
 export const modalSlice = createSlice({

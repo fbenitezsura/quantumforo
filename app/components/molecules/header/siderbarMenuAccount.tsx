@@ -130,7 +130,7 @@ const SiderbarAccountMenuMobile = ({
                       </div>
                       <div className="flex justify-start items-center mb-3.5">
                         <div className="flex flex-col space-x-4 mt-10 w-full">
-                          <Link href="/emprendimientos">
+                          <Link href="/entrepreneurship">
                             <button className="text-white text-left px-4 py-2 w-auto">Emprendimientos</button>
                           </Link>
                           <Link href="/nosotros">

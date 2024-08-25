@@ -53,7 +53,7 @@ const Header: React.FC = ({
 
                     {/* Segunda fila de botones - Desktop */}
                     <div className="hidden md:flex space-x-4">
-                        <Link href="/emprendimientos">
+                        <Link href="/entrepreneurship">
                             <button className="text-white px-4 py-2">Emprendimientos</button>
                         </Link>
                         <Link href="/external-trade-broker/continentallogistics">
