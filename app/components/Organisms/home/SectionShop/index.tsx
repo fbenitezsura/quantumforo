@@ -4,7 +4,7 @@ import { TabGroup, TabList, TabPanel, TabPanels, Tab } from '@headlessui/react';
 import TabButton from '@/app/components/Atoms/TabButton/index';
 import TabPanelContent from '@/app/components/Molecules/Tabs/index';
 import { useState } from 'react';
-import Loading from '@/app/components/Molecules/Loading/loading';
+import Loading from '@/app/components/Molecules/Loading';
 import NoData from '@/app/components/Molecules/noData/index';
 import Link from 'next/link';
 

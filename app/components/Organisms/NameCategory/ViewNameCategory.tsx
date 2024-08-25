@@ -1,9 +1,9 @@
 'use client'
 import React, { FC } from "react";
 import Pagination from "@components/Atoms/Pagination/Pagination";
-import Card11 from "@components/Molecules/Card11/Card11";
+import Card11 from "@/app/components/Molecules/Card11/index";
 import Image from "next/image";
-import Loading from '@components/Molecules/Loading/loading';
+import Loading from '@/app/components/Molecules/Loading';
 
 const PageArchive = ({
   detailCategory,

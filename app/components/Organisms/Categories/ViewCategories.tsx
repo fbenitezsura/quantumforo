@@ -1,5 +1,5 @@
-import Loading from '@components/Molecules/Loading/loading';
-import CardCategory from "@components/Molecules/CardCategory3/CardCategory3";
+import Loading from '@/app/components/Molecules/Loading';
+import CardCategory from "@/app/components/Molecules/CardCategory3/index";
 const ViewCategories = ({
     categories,
     loading

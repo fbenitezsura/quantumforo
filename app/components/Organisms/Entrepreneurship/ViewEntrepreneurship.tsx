@@ -1,5 +1,5 @@
-import Banner from '@components/Molecules/banner/index';
-import MapComponent from '@components/Molecules/googleMaps/index';
+import Banner from '@/app/components/Molecules/Banner/index';
+import MapComponent from '@/app/components/Molecules/GoogleMaps/index';
 import StoreCard from '@components/Molecules/shop/card/index';
 
 const ViewEntrepreneurship = ({
