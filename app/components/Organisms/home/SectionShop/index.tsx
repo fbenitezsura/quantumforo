@@ -21,45 +21,30 @@ const ViewSectionShop = ({
     return (
         <div className="flex h-screen w-full justify-center pt-8 px-4">
             <div className="w-full">
-                <TabGroup selectedIndex={selectedIndex} onChange={setSelectedIndex}>
-                    <TabList className="flex justify-around gap-4">
-                        {storesData?.map(({ name }, index) => (
-                            <Tab
-                                key={name}
-                                className={categorySelected === name ? "text-black text-[24px] font-bold" :
-                                    "text-[#58c5f1] text-[24px]"}
-                                onClick={() => handleSelectedCategory(name)}
-                            >
-                                {name}
-                            </Tab>
-                        ))}
-                    </TabList>
-                    <TabPanels className="mt-3">
-                        {loadingGetStore && <Loading text="Cargando tiendas..." />}
-                        {!loadingGetStore && listStore.length === 0 &&
-                            <div className="mt-[100px]">
-                                <NoData />
-                            </div>}
-                        {listStore.length > 0 && listStore.map((store, index) => {
+                {loadingGetStore && <Loading text="Cargando tiendas..." />}
+                {!loadingGetStore && listStore?.length === 0 &&
+                    <div className="mt-[100px]">
+                        <NoData />
+                    </div>}
+                {listStore?.length > 0 && (
+                    <ul className="grid grid-cols-12 gap-4">
+                        {listStore?.map((store) => {
                             return (
-                                <TabPanel key={store.title || index} className="rounded-xl bg-white/5 p-3">
-                                    <ul className="grid grid-cols-12 gap-4">
-                                        <StoreCard
-                                            id={store.id}
-                                            key={store.url}  // Usar 'url' o un identificador único si está disponible
-                                            name={store.Name}
-                                            description={store.Description}
-                                            categories={store.categories}
-                                            image={store.imgUrl}
-                                            color={store.backgroundColor || 'bg-white'}
-                                            url={store.Url}
-                                        />
-                                    </ul>
-                                </TabPanel>
+                                <StoreCard
+                                    className="col-span-12 md:col-span-3"
+                                    id={store?.id}
+                                    key={store?.url}
+                                    name={store?.Name}
+                                    description={store?.Description}
+                                    categories={store?.categories}
+                                    image={store?.imgUrl}
+                                    color={store?.backgroundColor || 'bg-white'}
+                                    url={store?.Url}
+                                />
                             );
                         })}
-                    </TabPanels>
-                </TabGroup>
+                    </ul>
+                )}
             </div>
         </div>
     );

@@ -34,6 +34,34 @@ export const getAllStore = createAsyncThunk(
   }
 );
 
+export const searchStore = createAsyncThunk(
+  'storeSlice/searchStore',
+  async (searchParams: any, thunkAPI) => {
+    const kind = 'searchStore';
+    try {
+      console.log(searchParams)
+      const storeResult = await quantumService.searchStore(searchParams);
+      let result;
+      storeResult.fold(
+        (err) => {
+          console.log(err)
+          thunkAPI.rejectWithValue({ kind, error: err.message });
+          result = [];
+        },
+        (allStore) => {
+          console.log('aca tenemos todo los all Store', allStore)
+          result = allStore;
+        }
+      );
+
+      return result;
+    } catch (error) {
+      console.log(error)
+      return thunkAPI.rejectWithValue({ kind, error: (error as Error).message });
+    }
+  }
+);
+
 export const storeSlice = createSlice({
   name: 'storeSlice',
   initialState,
@@ -53,6 +81,16 @@ export const storeSlice = createSlice({
       })
       .addCase(getAllStore.rejected, (state, action) => {
         state.loadingGetStore = false; 
+      })
+      .addCase(searchStore.pending, (state) => {
+        state.loadingSearchStore = true;
+      })
+      .addCase(searchStore.fulfilled, (state, action) => {
+        state.loadingSearchStore = false;
+        state.listSearchStore = action.payload;
+      })
+      .addCase(searchStore.rejected, (state, action) => {
+        state.loadingSearchStore = false; 
       });
   },
 });

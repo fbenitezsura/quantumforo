@@ -3,12 +3,16 @@ interface initialState {
     loadingGetStore: Boolean;
     categories: Array<string>;
     categorySelected: string;
+    listSearchStore: any;
+    loadingSearchStore: Boolean;
 };
 
 
 export const initialState: initialState = {
     listStore: [],
     loadingGetStore: true,
+    loadingSearchStore: true,
+    listSearchStore: [],
     categories: [{
         name: 'Popular'
     },

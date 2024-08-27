@@ -1,8 +1,10 @@
 
 import type { DataError } from '@clean/domain/entities/dataError';
 import type { Either } from '@clean/domain/entities/either';
+import { SearchParams } from '@clean/domain/dtos/Store/searchDto';
 
 export interface QuantumForoRepository {
+  searchStore(params: SearchParams): Promise<Either<DataError, any[]>>;
   getAllStore(selectedCategory: string) : Promise<Either<DataError, any[]>>;
   getStoreById(id: string): Promise<Either<DataError, any>>;
   getEntrepreneurById(id: string): Promise<Either<DataError, any>>;

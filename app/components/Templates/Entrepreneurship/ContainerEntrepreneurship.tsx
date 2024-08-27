@@ -2,7 +2,7 @@
 import ViewEntrepreneurship from '@components/Organisms/Entrepreneurship/ViewEntrepreneurship';
 import { useAppDispatch, useAppSelector } from '@clean/application/redux/hook';
 import { useEffect } from 'react';
-import { getAllStore } from '@clean/application/redux/store/store.slice';
+import { getAllStore, searchStore } from '@clean/application/redux/store/store.slice';
 import { useSearchParams } from 'next/navigation'
 
 const ContainerEntrepreneurship = ({
@@ -16,23 +16,22 @@ const ContainerEntrepreneurship = ({
     const dispatch = useAppDispatch();
 
     const {
-        loadingGetStore,
-        listStore,
+        loadingSearchStore,
+        listSearchStore,
         categorySelected,
         categories
     } = useAppSelector((state) => state.Store);
 
     useEffect(() => {
-        dispatch(getAllStore());
-    }, [categorySelected]);
-
-    console.log('listStore',listStore)
+        const searchParams = { name: search, categoryName: search };
+        dispatch(searchStore(searchParams));
+    }, [search]);
 
 
     return (
         <ViewEntrepreneurship
-        listStore={listStore}
-        loadingStore={loadingGetStore}
+        listStore={listSearchStore}
+        loadingStore={loadingSearchStore}
         city={city}
         />
     )

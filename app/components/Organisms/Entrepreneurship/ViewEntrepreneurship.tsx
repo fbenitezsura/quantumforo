@@ -18,6 +18,8 @@ const ViewEntrepreneurship = ({
         lng: -70.6693,
     };
 
+    console.log('listStore', listStore)
+
     return (
         <div className="">
             <div className="w-full">
@@ -29,20 +31,36 @@ const ViewEntrepreneurship = ({
                         center={center}
                     />
                 </div>
-                <div className="mt-2 col-span-8 min-h-[500px]">
+                <div className="mt-2 mr-4 col-span-8 min-h-[500px]">
                     <span className="text-md">{listStore?.length || 0} emprendimientos en <strong>{city}</strong></span>
+                    {loadingStore && (
+                        <div className="mt-16 text-center">
+                            <span>Cargando emprendimientos...</span>
+                        </div>
+                    )}
                     {listStore?.length === 0 && !loadingStore && (
                         <div className="mt-16 text-center">
                             <span>No se encontraron emprendimientos.</span>
                         </div>
                     )}
-                    {listStore?.map((store, index) => {
-                        return (
-                            <div>
-                                <h3>{store.name}</h3>
-                            </div>
-                        )
-                    })}
+                    <ul className="grid grid-cols-12 gap-4">
+                        {listStore?.map((store, index) => {
+                            return (
+                                <StoreCard
+                                     className="col-span-12 md:col-span-4"
+                                    id={store?.id}
+                                    key={store?.url}  // Usar 'url' o un identificador único si está disponible
+                                    name={store?.Name}
+                                    description={store?.Description}
+                                    categories={store?.categories}
+                                    image={store?.imgUrl}
+                                    color={store?.backgroundColor || 'bg-white'}
+                                    url={store?.Url}
+                                />
+                            )
+                        })}
+                    </ul>
+
                 </div>
                 <div className="col-span-4 hidden md:block h-auto">
                     <MapComponent

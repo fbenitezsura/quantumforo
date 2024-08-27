@@ -2,6 +2,7 @@ import type { DataError } from '@clean/domain/entities/dataError';
 import { Either } from '@clean/domain/entities/either';
 import type { QuantumForoRepository } from '@clean/domain/repositories/quantumForoRepository';
 import { apiQForo } from '@clean/infrastructure/http/index';
+import { SearchParams } from '@clean/domain/dtos/Store/searchDto';
 
 class QuantumForoRepositoryImpl implements QuantumForoRepository {
 
@@ -15,6 +16,35 @@ class QuantumForoRepositoryImpl implements QuantumForoRepository {
           storeResult
         ));
       } catch (error) {
+        resolver(Either.left({ kind: 'UnexpectedError', error }));
+      }
+    });
+  }
+
+  async searchStore(params: SearchParams): Promise<Either<DataError, string[]>> {
+    return new Promise(async (resolver, _reject) => {
+      try {
+        // Construir la URL con los filtros dinámicos
+        let queryParams = '';
+
+        console.log('params', params);
+
+
+        if (params.name || params.categoryName) {
+          queryParams += '&filters[$or][0][Name][$containsi]=' + encodeURIComponent(params.name || '');
+          queryParams += '&filters[$or][1][store_categories][Name][$containsi]=' + encodeURIComponent(params.categoryName || '');
+        }
+
+        // Construir la URL final
+        const url = `/stores?populate=*${queryParams}`;
+
+        console.log('vamos a buscar en esta url', url);
+
+        const storeResult = await apiQForo.get(url);
+        console.log('storeResult sdsd', storeResult)
+        resolver(Either.right(storeResult));
+      } catch (error) {
+        console.log('error', error);
         resolver(Either.left({ kind: 'UnexpectedError', error }));
       }
     });

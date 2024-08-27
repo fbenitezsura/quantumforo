@@ -1,10 +1,10 @@
 import clsx from 'clsx';
 import Link from 'next/link';
 
-const StoreCard = ({ id, name, description, categories, image, color, url }) => {
+const StoreCard = ({ id, name, description, categories, image, color, url, className }) => {
   return (
     <Link 
-    className={clsx(`col-span-12 md:col-span-4 max-w-sm overflow-hidden cursor-pointer`)}
+    className={clsx(className,`max-w-sm overflow-hidden cursor-pointer`)}
     href={`/store/${id}`}>
       <div className="flex flex-col justify-center">
         <img className="w-full h-[305px] object-cover rounded-xl" src={image} alt={name} />

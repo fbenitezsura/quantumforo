@@ -3,12 +3,23 @@ import { Either } from '@clean/domain/entities/either';
 import type { QuantumForoRepository } from '@clean/domain/repositories/quantumForoRepository';
 import { transformDetailData, transformDetailLeaderBoardMenu } from '@utils/DestructuringStrapi';
 import { EitherAsync } from '@clean/domain/entities/eitherAsync';
+import { SearchParams } from '@clean/domain/dtos/Store/searchDto';
 
 class QuantumForoUseCase implements QuantumForoRepository {
   qfRepo: QuantumForoRepository;
 
   constructor(QR: QuantumForoRepository) {
     this.qfRepo = QR;
+  }
+  async searchStore(params: SearchParams): Promise<Either<DataError, any[]>> {
+    const storeResult = EitherAsync.fromPromise(this.qfRepo.searchStore(params));
+    return storeResult
+      .flatMap(async (details) => {
+        console.log(details)
+        const cleanDetails = transformDetailData(details);
+        return Either.right(cleanDetails);
+      })
+      .run();
   }
   async getAllStore(selectedCategory: string) : Promise<Either<DataError, any[]>> {
     const storeResult = EitherAsync.fromPromise(this.qfRepo.getAllStore(selectedCategory));
