@@ -1,7 +1,7 @@
 'use client'
 import React, { FC } from "react";
 import Pagination from "@components/Atoms/Pagination/Pagination";
-import Card11 from "@components/Molecules/Card11/index";
+import CardAuthor from "@/app/components/Molecules/CardAuthor/index";
 import Image from "next/image";
 import Loading from '@components/Molecules/Loading';
 
@@ -61,7 +61,7 @@ const PageArchive = ({
               )}
               <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 md:gap-8 mt-8 lg:mt-10">
                 {posts?.map((post) => (
-                  <Card11 key={post.id} post={post} />
+                  <CardAuthor key={post.id} post={post} />
                 ))}
               </div>
             </>

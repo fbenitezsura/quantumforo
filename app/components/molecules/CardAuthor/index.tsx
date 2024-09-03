@@ -5,18 +5,17 @@ import PostCardSaveAction from "@components/Molecules/PostCardSaveAction/PostCar
 import { PostDataType } from "@data/types";
 import CategoryBadgeList from "@components/Molecules/CategoryBadgeList/CategoryBadgeList";
 import PostCardLikeAndComment from "@components/Molecules/PostCardLikeAndComment/PostCardLikeAndComment";
-import PostCardMeta from "@components/Molecules/PostCardMeta/PostCardMeta";
 import PostFeaturedMedia from "@components/Molecules/PostFeaturedMedia/PostFeaturedMedia";
 import Link from "next/link";
 
-export interface Card11Props {
+export interface CardAuthorProps {
   className?: string;
   post: PostDataType;
   ratio?: string;
   hiddenAuthor?: boolean;
 }
 
-const Card11: FC<Card11Props> = ({
+const CardAuthor: FC<CardAuthorProps> = ({
   className = "h-full",
   post,
   hiddenAuthor = false,
@@ -65,4 +64,4 @@ const Card11: FC<Card11Props> = ({
   );
 };
 
-export default Card11;
+export default CardAuthor;

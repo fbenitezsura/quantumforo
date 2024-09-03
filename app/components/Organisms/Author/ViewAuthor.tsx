@@ -1,23 +1,9 @@
-/*import Pagination from "@components/Atoms/Pagination/Pagination";
-import ButtonPrimary from "@components/Atoms/Button/ButtonPrimary";*/
 import Nav from "@components/Atoms/Nav/Nav";
 import NavItem from "@components/Atoms/NavItem/NavItem";
-/*import SocialsList from "@components/Molecules/SocialsList/SocialsList";
-import ArchiveFilterListBox from "@components/Molecules/ArchiveFilterListBox/ArchiveFilterListBox";
-import SectionSubscribe2 from "@components/Molecules/SectionSubscribe2/SectionSubscribe2";*/
-import Card11 from "@components/Molecules/Card11/index";
-/*import BackgroundSection from "@components/Atoms/BackgroundSection/BackgroundSection";
-import SectionGridCategoryBox from "@components/Molecules/SectionGridCategoryBox/SectionGridCategoryBox";
-import ButtonSecondary from "@components/Atoms/Button/ButtonSecondary";
-import SectionSliderNewAuthors from "@components/Molecules/SectionSliderNewAthors/SectionSliderNewAuthors";*/
+import CardAuthor from "@components/Molecules/CardAuthor/index";
 import NcImage from "@components/Atoms/NcImage/NcImage";
 import { GlobeAltIcon, ShareIcon } from "@heroicons/react/24/outline";
-//import { avatarImgs } from "@contains/fakeData";
 import VerifyIcon from "@components/Atoms/VerifyIcon";
-/*import FollowButton from "@components/Molecules/FollowButton";
-import NcDropDown from "@components/Atoms/NcDropDown/NcDropDown";
-import { SOCIALS_DATA } from "@components/Atoms/SocialsShare/SocialsShare";
-import AccountActionDropdown from "@components/Molecules/AccountActionDropdown/AccountActionDropdown";*/
 import Image from "next/image";
 
 const ViewAuthor = ({
@@ -135,7 +121,7 @@ const ViewAuthor = ({
                     {/* LOOP ITEMS */}
                     <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 md:gap-8 mt-8 lg:mt-10">
                         {posts?.filter((_, i) => _.category?.data?.attributes?.name === tabActive).map((post) => (
-                            <Card11 key={post.id} post={post} />
+                            <CardAuthor key={post.id} post={post} />
                         ))}
                     </div>
 
