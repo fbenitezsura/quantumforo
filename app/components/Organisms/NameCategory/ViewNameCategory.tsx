@@ -1,9 +1,9 @@
 'use client'
 import React, { FC } from "react";
 import Pagination from "@components/Atoms/Pagination/Pagination";
-import CardAuthor from "@/app/components/Molecules/CardAuthor/index";
+import CardAuthor from "@components/Molecules/CardAuthor/index";
 import Image from "next/image";
-import Loading from '@components/Molecules/Loading';
+import LoadingSpinner from '@components/Molecules/LoadingSpinner';
 
 const PageArchive = ({
   detailCategory,
@@ -51,7 +51,7 @@ const PageArchive = ({
           {/* LOOP ITEMS */}
 
           {loading ? (
-            <Loading textLoading="Cargando Notas..." />
+            <LoadingSpinner textLoading="Cargando Notas..." />
           ) : (
             <>
               {posts.length === 0 && (

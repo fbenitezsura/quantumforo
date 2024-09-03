@@ -3,12 +3,12 @@ import { TaxonomyType } from "@data/types";
 import Link from "next/link";
 import { Image } from "@components/Atoms/Image/Image";
 import useCheckMobileScreen from '@hooks/useCheckMobile';
-export interface CardCategory3Props {
+export interface CardCategoryProps {
   className?: string;
   taxonomy: TaxonomyType;
 }
 
-const CardCategory3: FC<CardCategory3Props> = ({
+const CardCategory: FC<CardCategoryProps> = ({
   className = "",
   taxonomy,
   key
@@ -44,4 +44,4 @@ const CardCategory3: FC<CardCategory3Props> = ({
   );
 };
 
-export default CardCategory3;
+export default CardCategory;

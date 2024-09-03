@@ -1,4 +1,3 @@
-// Loading.tsx
 import React from 'react';
 import LoaderWrapper from '@components/Atoms/loader/wrapper';
 import LoaderSpinner from '@components/Atoms/loader/spinner';
@@ -8,7 +7,7 @@ type LoadingProps = {
   text?: string;
 };
 
-const Loading: React.FC<LoadingProps> = ({ text }) => {
+const LoadingSpinner: React.FC<LoadingProps> = ({ text }) => {
   return (
     <LoaderWrapper>
       <div className="flex flex-col items-center">
@@ -19,4 +18,4 @@ const Loading: React.FC<LoadingProps> = ({ text }) => {
   );
 };
 
-export default Loading;
+export default LoadingSpinner;

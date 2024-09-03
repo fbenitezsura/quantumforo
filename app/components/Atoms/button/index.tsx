@@ -24,3 +24,5 @@ const CustomButton: React.FC<ButtonProps> = ({ children, variant = 'default', cl
     </Button>
   );
 };
+
+export default CustomButton;

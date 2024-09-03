@@ -1,5 +1,6 @@
-import Loading from '@components/Molecules/Loading/index';
-import CardCategory from "@components/Molecules/CardCategory3/index";
+import LoadingSpinner from '@components/Molecules/LoadingSpinner/index';
+import CardCategory from "@components/Molecules/CardCategory/index";
+
 const ViewCategories = ({
     categories,
     loading
@@ -22,7 +23,7 @@ const ViewCategories = ({
             </div>
             <div className="container pt-10 pb-16 lg:pb-28 lg:pt-20 space-y-16 lg:space-y-28">
                 {loading ? (
-                    <Loading textLoading="Cargando Categorias..." />
+                    <LoadingSpinner textLoading="Cargando Categorias..." />
                 ) : (
                     <>
                         {categories.length === 0 && (

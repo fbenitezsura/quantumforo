@@ -4,7 +4,7 @@ import { TabGroup, TabList, TabPanel, TabPanels, Tab } from '@headlessui/react';
 import TabButton from '@components/Atoms/TabButton/index';
 import TabPanelContent from '@components/Molecules/Tabs/index';
 import { useState } from 'react';
-import Loading from '@components/Molecules/Loading';
+import LoadingSpinner from '@components/Molecules/LoadingSpinner';
 import NoData from '@components/Molecules/noData/index';
 import Link from 'next/link';
 
@@ -21,7 +21,7 @@ const ViewSectionShop = ({
     return (
         <div className="flex h-screen w-full justify-center pt-8 px-4">
             <div className="w-full">
-                {loadingGetStore && <Loading text="Cargando tiendas..." />}
+                {loadingGetStore && <LoadingSpinner text="Cargando tiendas..." />}
                 {!loadingGetStore && listStore?.length === 0 &&
                     <div className="mt-[100px]">
                         <NoData />
