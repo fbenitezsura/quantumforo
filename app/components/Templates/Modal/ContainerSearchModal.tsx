@@ -19,6 +19,7 @@ const ContainerSearchModal = () => {
 
     const handleSearch = (data: any) => {
         const { search, city } = data;
+        handleClose();
         router.push(`/entrepreneurship?search=${encodeURIComponent(search)}&city=${encodeURIComponent(city)}`);
     };
 
