@@ -1,7 +1,5 @@
-'use client'
 import Nav from "@components/Atoms/Nav/Nav";
 import NavItem from "@components/Atoms/NavItem/NavItem";
-import CardAuthor from "@components/Molecules/CardAuthor/index";
 import NcImage from "@components/Atoms/NcImage/NcImage";
 import { GlobeAltIcon, ShareIcon } from "@heroicons/react/24/outline";
 import VerifyIcon from "@components/Atoms/VerifyIcon";
@@ -117,13 +115,6 @@ const ViewAuthor = ({
                         {/*<div className="flex justify-end">
                             <ArchiveFilterListBox lists={FILTERS} />
                         </div>*/}
-                    </div>
-
-                    {/* LOOP ITEMS */}
-                    <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 md:gap-8 mt-8 lg:mt-10">
-                        {posts?.filter((_, i) => _.category?.data?.attributes?.name === tabActive).map((post) => (
-                            <CardAuthor key={post.id} post={post} />
-                        ))}
                     </div>
 
                     {/* PAGINATION 
