@@ -1,4 +1,5 @@
-
+import LoadingSpinner from '@components/Molecule/LoadingSpinner/index';
+import CardCategory from "@components/Molecule/CardCategory/index";
 
 const ViewCategories = ({
     categories,
@@ -22,7 +23,7 @@ const ViewCategories = ({
             </div>
             <div className="container pt-10 pb-16 lg:pb-28 lg:pt-20 space-y-16 lg:space-y-28">
                 {loading ? (
-                    <span>Cargando Categorias...</span>
+                    <LoadingSpinner textLoading="Cargando Categorias..." />
                 ) : (
                     <>
                         {categories.length === 0 && (
@@ -33,7 +34,7 @@ const ViewCategories = ({
                         <div className="grid sm:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 gap-6 md:gap-8 mt-8 lg:mt-10">
                             {categories?.map((category) => {
                                 return (
-                                    <span>cualquier cosa</span>
+                                    <CardCategory key={category.id} taxonomy={category} />
                                 )
                             })}
                         </div>

@@ -1,6 +1,6 @@
 import React from "react";
-import Logo from "@components/Molecules/Logo/Logo";
-import SocialsList1 from "@components/Molecules/SocialsList1/SocialsList1";
+import Logo from "@components/Molecule/Logo/Logo";
+import SocialsList1 from "@components/Molecule/SocialsList1/SocialsList1";
 import { CustomLink } from "@data/types";
 import NcLink from '@components/Atoms/NcLink/NcLink';
 export interface WidgetFooterMenu {

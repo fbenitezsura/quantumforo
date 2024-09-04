@@ -1,4 +1,4 @@
-import { NavItemType } from "@components/Molecules/Navigation/NavigationItem";
+import { NavItemType } from "@components/Molecule/Navigation/NavigationItem";
 import { Route } from "@routers/types";
 import _ from "lodash";
 
