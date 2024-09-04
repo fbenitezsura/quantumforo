@@ -1,4 +1,4 @@
-import AddReviewForm from "@components/Molecules/form/addReviewForm";
+import AddReviewForm from "@/app/components/Molecule/form/addReviewForm";
 import { Button, Dialog, DialogPanel, DialogTitle } from '@headlessui/react'
 
 const ViewReviewForm = ({

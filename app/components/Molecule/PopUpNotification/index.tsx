@@ -5,7 +5,7 @@ import { useEffect } from 'react';
 import SVGCheck from '@components/Atoms/svg/SVGCheck';
 import SVGAlertSolid from '@components/Atoms/svg/SVGAlertSolid';
 import SVGX from '@components/Atoms/svg/SVGX';
-import PopUpConfirmation from '@components/Molecules/PopUpNotification/popUpConfirmation';
+import PopUpConfirmation from '@/app/components/Molecule/PopUpNotification/popUpConfirmation';
 interface PopUpNotificationsProps {
 }
 

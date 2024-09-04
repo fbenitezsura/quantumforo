@@ -2,7 +2,7 @@
 
 import React, { FC } from "react";
 import PostActionDropdown from "@components/Molecules/PostActionDropdown/PostActionDropdown";
-import PostCardLikeAndComment from "@components/Molecules/PostCardLikeAndComment/PostCardLikeAndComment";
+import PostCardLikeAndComment from "@/app/components/Molecule/PostCardLikeAndComment/PostCardLikeAndComment";
 import { SOCIALS_DATA } from "@components/Atoms/SocialsShare/SocialsShare";
 import NcDropDown from "@components/Atoms/NcDropDown/NcDropDown";
 import NcBookmark from "@components/Atoms/NcBookmark/NcBookmark";

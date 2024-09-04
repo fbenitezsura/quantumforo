@@ -1,4 +1,4 @@
-import Banner from '@components/Molecules/Banner/index';
+import Banner from '@/app/components/Molecule/Banner/index';
 import SectionShop from '@components/Templates/home/SectionShop/index';
 
 const ViewHome = () => {

@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { FieldValues, useForm } from "react-hook-form";
-import LoginForm from '@components/Molecules/form/loginForm';
+import LoginForm from '@/app/components/Molecule/form/loginForm';
 
 interface SignInCredentials extends FieldValues {
   email: string

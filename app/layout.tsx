@@ -4,7 +4,7 @@ import ContainerHeader from '@components/Templates/header/index';
 import "./globals.css";
 import clsx from 'clsx';
 import { ReduxProvider } from "@providers/redux-provider";
-import PopUpNotifications from "@components/Molecules/PopUpNotification/index";
+import PopUpNotifications from "@/app/components/Molecule/PopUpNotification/index";
 
 const inter = Inter({ subsets: ["latin"] });
 

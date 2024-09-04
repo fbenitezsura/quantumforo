@@ -1,11 +1,11 @@
 'use client'
-import StoreCard from '@components/Molecules/shop/card/index';
+import StoreCard from '@/app/components/Molecule/shop/card/index';
 import { TabGroup, TabList, TabPanel, TabPanels, Tab } from '@headlessui/react';
 import TabButton from '@components/Atoms/TabButton/index';
-import TabPanelContent from '@components/Molecules/Tabs/index';
+import TabPanelContent from '@/app/components/Molecule/Tabs/index';
 import { useState } from 'react';
-import LoadingSpinner from '@components/Molecules/LoadingSpinner';
-import NoData from '@components/Molecules/noData/index';
+import LoadingSpinner from '@/app/components/Molecule/LoadingSpinner';
+import NoData from '@/app/components/Molecule/noData/index';
 import Link from 'next/link';
 
 const ViewSectionShop = ({

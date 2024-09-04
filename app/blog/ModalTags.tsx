@@ -1,7 +1,7 @@
 "use client";
 
 import React, { FC } from "react";
-import NcModal from "@components/Molecules/NcModal/NcModal";
+import NcModal from "@/app/components/Molecule/NcModal/NcModal";
 import Tag from "@components/Atoms/Tag/Tag";
 import { TaxonomyType } from "@data/types";
 import Button from "@components/Atoms/Button/Button";

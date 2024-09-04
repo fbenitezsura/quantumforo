@@ -2,7 +2,7 @@
 
 import React, { FC, useEffect, useRef, useState } from "react";
 import dynamic from 'next/dynamic';
-const SingleContentDemo = dynamic(() => import('@components/Molecules/Content/SingleContentDemo'), {
+const SingleContentDemo = dynamic(() => import('@/app/components/Molecule/Content/SingleContentDemo'), {
   loading: () => <p>Loading...</p>,
 })
 const PostCardLikeAction = dynamic(() => import('@components/Atoms/PostCardLikeAction/PostCardLikeAction'), {
@@ -11,7 +11,7 @@ const PostCardLikeAction = dynamic(() => import('@components/Atoms/PostCardLikeA
 const PostCardCommentBtn = dynamic(() => import('@components/Atoms/PostCardCommentBtn/PostCardCommentBtn'), {
   loading: () => <p>Loading...</p>,
 })
-const SingleHeader = dynamic(() => import('@components/Molecules/Content/SingleHeader'), {
+const SingleHeader = dynamic(() => import('@/app/components/Molecule/Content/SingleHeader'), {
   loading: () => <p>Loading...</p>,
 })
 

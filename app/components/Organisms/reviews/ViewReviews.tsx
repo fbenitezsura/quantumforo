@@ -1,4 +1,4 @@
-import CardReviews from '@components/Molecules/Reviews/CardReviews/index'
+import CardReviews from '@/app/components/Molecule/Reviews/CardReviews/index'
 import ContainerReviewForm from '@components/Templates/Modal/ContainerReviewForm';
 
 const ViewReviews = ({

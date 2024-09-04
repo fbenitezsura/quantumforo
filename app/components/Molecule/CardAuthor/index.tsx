@@ -1,11 +1,11 @@
 "use client";
 
 import React, { FC, useState } from "react";
-import PostCardSaveAction from "@components/Molecules/PostCardSaveAction/PostCardSaveAction";
+import PostCardSaveAction from "@/app/components/Molecule/PostCardSaveAction/PostCardSaveAction";
 import { PostDataType } from "@data/types";
-import CategoryBadgeList from "@components/Molecules/CategoryBadgeList/CategoryBadgeList";
-import PostCardLikeAndComment from "@components/Molecules/PostCardLikeAndComment/PostCardLikeAndComment";
-import PostFeaturedMedia from "@components/Molecules/PostFeaturedMedia/PostFeaturedMedia";
+import CategoryBadgeList from "@/app/components/Molecule/CategoryBadgeList/CategoryBadgeList";
+import PostCardLikeAndComment from "@/app/components/Molecule/PostCardLikeAndComment/PostCardLikeAndComment";
+import PostFeaturedMedia from "@/app/components/Molecule/PostFeaturedMedia/PostFeaturedMedia";
 import Link from "next/link";
 
 export interface CardAuthorProps {

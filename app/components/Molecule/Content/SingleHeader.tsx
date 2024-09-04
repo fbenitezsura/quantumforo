@@ -1,10 +1,10 @@
 "use client";
 
 import React, { FC } from "react";
-import CategoryBadgeList from "@components/Molecules/CategoryBadgeList/CategoryBadgeList";
+import CategoryBadgeList from "@/app/components/Molecule/CategoryBadgeList/CategoryBadgeList";
 import SingleTitle from "@components/Atoms/Content/SingleTitle";
-import PostMeta2 from "@components/Molecules/PostMeta2/PostMeta2";
-import SingleMetaAction2 from "@components/Molecules/Content/SingleMetaAction";
+import PostMeta2 from "@/app/components/Molecule/PostMeta2/PostMeta2";
+import SingleMetaAction2 from "@/app/components/Molecule/Content/SingleMetaAction";
 import { DEMO_CATEGORIES } from "@data/taxonomies";
 
 export interface SingleHeaderProps { 

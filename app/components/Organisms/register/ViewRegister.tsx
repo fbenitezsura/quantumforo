@@ -1,5 +1,5 @@
-import RegisterForm from '@components/Molecules/form/registerForm';
-import CardTypeUser from '@components/Molecules/register/cardTypeUser';
+import RegisterForm from '@/app/components/Molecule/form/registerForm';
+import CardTypeUser from '@/app/components/Molecule/register/cardTypeUser';
 import { userTypes } from '@utils/Register/TypeUser/typeUser';
 
 const ViewRegister = ({

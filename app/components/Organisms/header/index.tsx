@@ -4,7 +4,7 @@ import HambugerSvg from '@components/Atoms/svg/hamburger';
 import XClose from '@components/Atoms/svg/x-close';
 import ContainerSideBarMenu from '../../Templates/header/ContainerSideBarMenu';
 import Link from 'next/link';
-import MenuUser from '@components/Molecules/header/MenuUser';
+import MenuUser from '@/app/components/Molecule/header/MenuUser';
 
 const Header: React.FC = ({
     isOpen,

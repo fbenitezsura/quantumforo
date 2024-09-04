@@ -1,5 +1,5 @@
-import SearchDesktopForm from "@components/Molecules/form/searchDesktopForm";
-import SearchMobileButton from "@components/Molecules/SearchModalButton/index";
+import SearchDesktopForm from "@/app/components/Molecule/form/searchDesktopForm";
+import SearchMobileButton from "@/app/components/Molecule/SearchModalButton/index";
 
 const ViewSearch = ({
     openModalSearch,

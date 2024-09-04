@@ -1,5 +1,5 @@
-import Banner from '@components/Molecules/Banner/index';
-import StoreCard from '@components/Molecules/shop/card/index';
+import Banner from '@/app/components/Molecule/Banner/index';
+import StoreCard from '@/app/components/Molecule/shop/card/index';
 import ContainerDraggable from '../../Templates/Draggable';
 
 const ViewEntrepreneurship = ({

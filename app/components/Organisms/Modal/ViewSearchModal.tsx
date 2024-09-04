@@ -1,5 +1,5 @@
 import { Button, Dialog, DialogPanel, DialogTitle } from '@headlessui/react'
-import SearchMobileForm from '@components/Molecules/form/searchMobileForm';
+import SearchMobileForm from '@/app/components/Molecule/form/searchMobileForm';
 
 export default function ViewSearchModal({
     isOpen,
