@@ -25,7 +25,7 @@ export default function AddReviewForm({
   });
 
   return (
-    <form onSubmit={handleSubmit(handleAddReview)} className="border-2 w-[700px] h-[90%] p-3 px-6 bg-white rounded-xl">
+    <form onSubmit={handleSubmit(handleAddReview)} className="border-2 w-full md:w-[700px] h-[90%] p-3 px-6 bg-white rounded-xl">
       {/* Name Field */}
       <div className="flex justify-end">
         <svg
