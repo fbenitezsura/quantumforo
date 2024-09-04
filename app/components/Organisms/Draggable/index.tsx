@@ -1,5 +1,4 @@
 import React from 'react';
-import StoreCard from '@components/Molecules/shop/card/index';
 
 function ViewDraggable({
   listStore,
@@ -28,17 +27,7 @@ function ViewDraggable({
         <ul className="grid grid-cols-12 gap-4">
           {!loadingStore && listStore?.map((store, index) => {
             return (
-              <StoreCard
-                className="col-span-12 md:col-span-4"
-                id={store?.id}
-                key={store?.url}  // Usar 'url' o un identificador único si está disponible
-                name={store?.Name}
-                description={store?.Description}
-                categories={store?.categories}
-                image={store?.imgUrl}
-                color={store?.backgroundColor || 'bg-white'}
-                url={store?.Url}
-              />
+              <span>Emprendimiento</span>
             )
           })}
         </ul>

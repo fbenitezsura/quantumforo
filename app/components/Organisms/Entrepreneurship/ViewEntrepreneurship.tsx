@@ -1,8 +1,5 @@
-'use client'
 import Banner from '@components/Molecules/Banner/index';
-import MapComponent from '@components/Molecules/GoogleMaps/index';
 import StoreCard from '@components/Molecules/shop/card/index';
-import { useState } from 'react';
 import ContainerDraggable from '../../Templates/Draggable';
 
 const ViewEntrepreneurship = ({
@@ -23,9 +20,7 @@ const ViewEntrepreneurship = ({
             </div>
             <div className="w-full grid grid-cols-12 md:px-5 pt-5 pb-10 relative">
                 <div className="col-span-12 h-[350px] block md:hidden">
-                    <MapComponent
-                        center={center}
-                    />
+                    
                 </div>
                 <div className="mt-2 mr-4 hidden md:block col-span-8 min-h-[500px]">
                     <span className="text-md">{listStore?.length || 0} emprendimientos en <strong>{city}</strong></span>
@@ -59,9 +54,7 @@ const ViewEntrepreneurship = ({
 
                 </div>
                 <div className="col-span-4 hidden md:block h-auto">
-                    <MapComponent
-                        center={center}
-                    />
+                    
                 </div>
                 <div className="col-span-12 h-[200px]">
                     <ContainerDraggable 
