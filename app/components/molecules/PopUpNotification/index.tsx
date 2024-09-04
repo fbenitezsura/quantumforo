@@ -16,10 +16,7 @@ const PopUpNotifications: React.FC<PopUpNotificationsProps> = () => {
   const { popUpNotificationType, popUpProps, isOpen } = useAppSelector(
     (state) => state.PopUpNotifications
   );
-
-  console.log('popUpNotificationType', popUpNotificationType);
-  console.log('iseOpen', isOpen);
-
+  
   useEffect(() => {
     let timer;
     if (popUpNotificationType !== 'QUESTION') {
