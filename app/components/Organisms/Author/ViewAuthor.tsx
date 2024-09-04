@@ -1,3 +1,4 @@
+'use client'
 import Nav from "@components/Atoms/Nav/Nav";
 import NavItem from "@components/Atoms/NavItem/NavItem";
 import CardAuthor from "@components/Molecules/CardAuthor/index";
