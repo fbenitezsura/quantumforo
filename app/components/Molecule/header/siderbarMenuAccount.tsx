@@ -133,16 +133,16 @@ const SiderbarAccountMenuMobile = ({
                           <Link href="/entrepreneurship">
                             <button className="text-white text-left px-4 py-2 w-auto">Emprendimientos</button>
                           </Link>
-                          <Link href="/nosotros">
+                          <Link href="/aboutUs">
                             <button className="text-white px-4 py-2">Sobre Nosotros</button>
                           </Link>
-                          <Link href="/eventos">
+                          <Link href="/events">
                             <button className="text-white px-4 py-2">Eventos</button>
                           </Link>
-                          <Link href="/testimonios">
+                          <Link href="/testimonials">
                             <button className="text-white px-4 py-2">Testimonios</button>
                           </Link>
-                          <Link href="/contacto">
+                          <Link href="/contact">
                             <button className="text-white px-4 py-2">Contacto</button>
                           </Link>
                           <Link href="/blog">

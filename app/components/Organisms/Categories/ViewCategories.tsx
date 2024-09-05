@@ -10,7 +10,7 @@ const ViewCategories = ({
 }) => {
 
     return (
-        <div className={`nc-PageArchive`}>
+        <div className={`nc-PageArchive pt-[120px]`}>
             <div className="w-full px-2 xl:max-w-screen-2xl mx-auto mt-10">
                 <div className="relative aspect-w-16 aspect-h-13 sm:aspect-h-9 lg:aspect-h-8 xl:aspect-h-5 rounded-3xl md:rounded-[40px] overflow-hidden z-0">
                     <div className="absolute inset-0 bg-black text-white bg-opacity-30 flex flex-col items-center justify-center">

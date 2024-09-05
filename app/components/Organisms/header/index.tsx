@@ -59,16 +59,16 @@ const Header: React.FC = ({
                         <Link href="/external-trade-broker/continentallogistics">
                             <button className="text-white px-4 py-2">Comercio Exterior</button>
                         </Link>
-                        <Link href="/nosotros">
+                        <Link href="/aboutUs">
                             <button className="text-white px-4 py-2">Sobre Nosotros</button>
                         </Link>
-                        <Link href="/eventos">
+                        <Link href="/events">
                             <button className="text-white px-4 py-2">Eventos</button>
                         </Link>
-                        <Link href="/testimonios">
+                        <Link href="/testimonials">
                             <button className="text-white px-4 py-2">Testimonios</button>
                         </Link>
-                        <Link href="/contacto">
+                        <Link href="/contact">
                             <button className="text-white px-4 py-2">Contacto</button>
                         </Link>
                         <Link href="/blog">

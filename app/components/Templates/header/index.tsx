@@ -27,7 +27,7 @@ const ContainerHeader = () => {
     useEffect(() => {
         const handleScroll = () => {
             const currentScroll = window.pageYOffset;
-            const limit = path === '/' ? 600 : 50;
+            const limit = (path === '/' || path === '/entrepreneurship') ? 50 : 0;
             if (currentScroll > limit) {
                 setIsFixed(true);
             } else if (currentScroll <= limit && oldScroll > currentScroll) {
