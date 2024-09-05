@@ -1,7 +1,7 @@
 import type { DataError } from '@clean/domain/entities/dataError';
 import { Either } from '@clean/domain/entities/either';
 import type { QuantumForoRepository } from '@clean/domain/repositories/quantumForoRepository';
-import { transformDetailData, transformDetailLeaderBoardMenu } from '@utils/DestructuringStrapi';
+import { transformDetailData, transformDetailLeaderBoardMenu, transformReview } from '@utils/DestructuringStrapi';
 import { EitherAsync } from '@clean/domain/entities/eitherAsync';
 import { SearchParams } from '@clean/domain/dtos/Store/searchDto';
 
@@ -34,11 +34,9 @@ class QuantumForoUseCase implements QuantumForoRepository {
   async registerUser(registerData: any): Promise<Either<DataError, any>> {
     return this.qfRepo.registerUser(registerData);
   }
-
   async login(loginData: any): Promise<Either<DataError, any>> {
     return this.qfRepo.login(loginData);
   }
-
   async forgottenPassword(email: string): Promise<Either<DataError, any>> {
     return this.qfRepo.forgottenPassword(email);
   }
@@ -62,6 +60,21 @@ class QuantumForoUseCase implements QuantumForoRepository {
         return Either.right(cleanDetails);
       })
       .run();
+  }
+  async getReviews(storeId :string): Promise<Either<DataError, any>> {
+    const reviewResult = EitherAsync.fromPromise(this.qfRepo.getReviews(storeId));
+    return reviewResult
+      .flatMap(async (details) => {
+        const cleanDetails = transformReview(details);
+        return Either.right(cleanDetails);
+      })
+      .run();
+  }
+  async addReview(payloadReview : any): Promise<Either<DataError, any>> {
+    return this.qfRepo.addReview(payloadReview);
+  }
+  async checkCanAddReview(storeId: string, userId: string): Promise<Either<DataError, any>> {
+    return this.qfRepo.checkCanAddReview(storeId, userId);
   }
 }
 

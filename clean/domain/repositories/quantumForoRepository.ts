@@ -12,6 +12,9 @@ export interface QuantumForoRepository {
   registerUser(registerData: any): Promise<Either<DataError, any>>;
   forgottenPassword(email: string): Promise<Either<DataError, any>>;
   resetPassword(password: string,passwordConfirmation :string, code: string): Promise<Either<DataError, any>>;
+  getReviews(storeId: string): Promise<Either<DataError, any>>;
+  addReview(payloadReview: any): Promise<Either<DataError, any>>;
+  checkCanAddReview(storeId: string, userId: string): Promise<Either<DataError, any>>;
 }
 
 

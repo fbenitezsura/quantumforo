@@ -49,6 +49,31 @@ export function transformDetailLeaderBoardMenu(dataObject) {
 
 }
 
+export function transformReview(allData: any[]) {
+  try{
+    return allData.data.map(item => {
+      const { attributes, id } = item;
+      const { store, user, ...restAttributes } = attributes;
+  
+      return {
+        id,
+        ...restAttributes,
+        store: {
+          id: store.data.id,
+          ...store.data.attributes
+        },
+        user: {
+          id: user.data.id,
+          ...user.data.attributes
+        }
+      };
+    });
+  } catch(e) {
+    console.log(e)
+  }
+ 
+}
+
 export function transformDetailDataWithPagination(dataObject) {
   const transformedData = dataObject.data.map(item => {
     return {

@@ -39,7 +39,6 @@ const getDetailEntrepeneur = async (id) => {
     
 }
 
-
 const PageProfile = async ({ params }: Props) => {
 
     const detailStore = await getDetailStore(params?.id);

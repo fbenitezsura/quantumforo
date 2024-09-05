@@ -2,6 +2,7 @@
 import { useForm } from "react-hook-form";
 import { yupResolver } from '@hookform/resolvers/yup';
 import validationSchema from '@utils/schemaYup/addReviewSchema'; // Asegúrate de que este archivo apunta al esquema Yup
+import StarRating from '@components/Molecule/Start/index';
 import { Field, Input as HeadlessInput, Label } from '@headlessui/react';
 import clsx from 'clsx';
 
@@ -19,13 +20,14 @@ export default function AddReviewForm({
     register,
     handleSubmit,
     reset,
+    setValue,
     formState: { errors }
   } = useForm({
     resolver: yupResolver(validationSchema),
   });
 
   return (
-    <form onSubmit={handleSubmit(handleAddReview)} className="border-2 w-full md:w-[700px] h-[90%] p-3 px-6 bg-white rounded-xl">
+    <form onSubmit={handleSubmit(handleAddReview)} className="border-2 w-[95%] mx-auto md:mx-0 md:w-[700px] h-[90%] p-3 px-6 bg-white rounded-xl">
       {/* Name Field */}
       <div className="flex justify-end">
         <svg
@@ -47,7 +49,11 @@ export default function AddReviewForm({
         </div>
         <div className="col col-span-9 pl-4">
           <div>Tienda</div>
-          <div>rating</div>
+          <StarRating 
+          onRatingSelect={(rating: number)=>{
+            setValue('rating',rating)
+          }}
+          />
         </div>
       </div>
 

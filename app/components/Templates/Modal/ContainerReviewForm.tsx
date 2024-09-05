@@ -1,12 +1,18 @@
 'use client'
 import ViewReviewForm from '@components/Organisms/Modal/ViewReviewForm'
-import { useAppSelector } from '@/clean/application/redux/hook';
 import { MODAL_TYPES, hideModal } from '@clean/application/redux/modal/modal.slice';
-import { useAppDispatch } from '@clean/application/redux/hook';
+import { useAppDispatch, useAppSelector } from '@clean/application/redux/hook';
+import { addReview } from '@/clean/application/redux/reviews/review.slice';
 
-const ContainerReviewForm = (props: any) => {
+const ContainerReviewForm = ({
+    detailStore
+}) => {
 
     const dispatch = useAppDispatch();
+
+    const {
+        userInfo
+    } = useAppSelector((state) => state.Auth);
 
     const {
         isOpen,
@@ -14,7 +20,24 @@ const ContainerReviewForm = (props: any) => {
     } = useAppSelector(state => state.Modal)
 
     const handleAddReview = (formInfo) => {
-        console.log('Add review',formInfo);
+        if (userInfo?.id) {
+            const payload = {
+                data: {
+                    ...formInfo,
+                    store: {
+                        connect: [{ id: detailStore.id, position: { end: true } }],
+                        disconnect: [],
+                    },
+                    user: {
+                        connect: [{ id: userInfo.id, position: { end: true } }],
+                        disconnect: [],
+                    }
+                }
+            }
+            dispatch(addReview(payload));
+            handleClose()
+        }
+
     }
 
     const handleClose = () => {
@@ -23,9 +46,9 @@ const ContainerReviewForm = (props: any) => {
 
     return (
         <ViewReviewForm
-        isOpen={isOpen && modalType === MODAL_TYPES.ADD_REVIEW}
-        handleAddReview={handleAddReview}
-        handleClose={handleClose}
+            isOpen={isOpen && modalType === MODAL_TYPES.ADD_REVIEW}
+            handleAddReview={handleAddReview}
+            handleClose={handleClose}
         />
     )
 }

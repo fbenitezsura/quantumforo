@@ -131,8 +131,43 @@ class QuantumForoRepositoryImpl implements QuantumForoRepository {
       }
     });
   }
-
-
+  async getReviews(storeId :string): Promise<Either<DataError, any>> {
+    return new Promise(async (resolver, _reject) => {
+      try {
+        const reviewResult = await apiQForo.get(
+          `/reviews?populate=*&filters[$and][0][store][id][$eq]=${storeId}`
+        );
+        resolver(Either.right(reviewResult));
+      } catch (error) {
+        resolver(Either.left({ kind: 'UnexpectedError', error }));
+      }
+    });
+  }
+  async addReview(payloadReview : any): Promise<Either<DataError, any>> {
+    return new Promise(async (resolver, _reject) => {
+      try {
+        const reviewResult = await apiQForo.post(
+          `/reviews?populate=*`,
+          payloadReview
+        );
+        resolver(Either.right(reviewResult));
+      } catch (error) {
+        resolver(Either.left({ kind: 'UnexpectedError', error }));
+      }
+    });
+  }
+  async checkCanAddReview(storeId: string, userId: string): Promise<Either<DataError, any>> {
+    return new Promise(async (resolver, _reject) => {
+      try {
+        const reviewResult = await apiQForo.get(
+          `/reviews?populate=*&filters[$and][0][store][id][$eq]=${storeId}&filters[$and][1][user][id][$eq]=${userId}`
+        );
+        resolver(Either.right(reviewResult));
+      } catch (error) {
+        resolver(Either.left({ kind: 'UnexpectedError', error }));
+      }
+    });
+  }
 }
 
 export default QuantumForoRepositoryImpl;

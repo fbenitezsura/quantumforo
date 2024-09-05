@@ -63,7 +63,7 @@ const ViewEntrepreneurship = ({
                         center={center}
                     />
                 </div>
-                <div className="col-span-12 h-[200px]">
+                <div className="md:hidden col-span-12 h-[200px]">
                     <ContainerDraggable 
                     
                     />

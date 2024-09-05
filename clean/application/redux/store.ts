@@ -18,6 +18,7 @@ import Message from './messages/messages.slice';
 import GeoLocation from './geoLocation/geolocation.slice';
 import Navbar from './navbar/navbar.slice';
 import Redirect from './redirect/redirect.slice';
+import Reviews from './reviews/review.slice';
 import Sidebar from './sidebar/sidebar.slice';
 import Notes from './notes/notes.slice';
 
@@ -38,6 +39,7 @@ const rootReducer = combineReducers({
   Redirect,
   Sidebar,
   Currency,
+  Reviews,
   Notes
 });
 
