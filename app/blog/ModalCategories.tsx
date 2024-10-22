@@ -4,7 +4,7 @@ import React, { FC } from "react";
 import { TaxonomyType } from "@data/types";
 import CardCategory1 from "@/app/components/Molecule/CardCategory1/CardCategory1";
 import NcModal from "@/app/components/Molecule/NcModal/NcModal";
-import Button from "@components/Atoms/Button/index";
+import Button from "@components/Atoms/Button";
 import { ChevronDownIcon } from "@heroicons/react/24/solid";
 
 export interface ModalCategoriesProps {

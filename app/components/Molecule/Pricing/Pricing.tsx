@@ -1,6 +1,6 @@
 'use client';
 
-import Button from '@components/Atoms/Button/index';
+import Button from '@components/Atoms/Button';
 import LogoCloud from '@components/Molecule/LogoCloud/index';
 import { getStripe } from '@utils/stripe/client';
 import { checkoutWithStripe } from '@utils/stripe/server';
