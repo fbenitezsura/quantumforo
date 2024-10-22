@@ -1,12 +1,12 @@
 'use client';
-import LogoCloud from '@components/Molecule/LogoCloud/index';
+
 import { getStripe } from '@utils/stripe/client';
 import { checkoutWithStripe } from '@utils/stripe/server';
 import { getErrorRedirect } from '@utils/helpers';
 import cn from 'classnames';
 import { useRouter, usePathname } from 'next/navigation';
 import { useState } from 'react';
-import Button from '@components/Atoms/Button/index';
+import Button from '@components/Atoms/Button';
 
 interface ProductWithPrices {
   prices: any[];
