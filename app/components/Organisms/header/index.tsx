@@ -12,7 +12,8 @@ const Header: React.FC = ({
     isFixed,
     userLogged,
     userInfo,
-    handleLogout
+    handleLogout,
+    typePosition
 }) => {
 
     return (
@@ -20,7 +21,7 @@ const Header: React.FC = ({
             style={{
                 background: isFixed ? '#5c5a5a' : 'transparent',
             }}
-            className="w-full fixed bg-gray-100 border-gray-300 pt-6 p-4 z-[100]"
+            className={`w-full ${typePosition} bg-gray-100 border-gray-300 pt-6 p-4 z-[100]`}
         >
             <div className="max-w-7xl mx-auto flex justify-between items-center h-[80px]">
                 {/* Logo */}

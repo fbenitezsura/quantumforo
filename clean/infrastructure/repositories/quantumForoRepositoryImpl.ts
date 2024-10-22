@@ -6,7 +6,7 @@ import { SearchParams } from '@clean/domain/dtos/Store/searchDto';
 
 class QuantumForoRepositoryImpl implements QuantumForoRepository {
 
-  async getAllStore(selectedCategory: string): Promise<Either<DataError, string[]>> {
+  async getStoreByCategory(selectedCategory: string): Promise<Either<DataError, string[]>> {
     return new Promise(async (resolver, _reject) => {
       try {
         const storeResult = await apiQForo.get(
@@ -31,7 +31,7 @@ class QuantumForoRepositoryImpl implements QuantumForoRepository {
 
 
         if (params.name || params.categoryName) {
-          queryParams += '&filters[$or][0][Name][$containsi]=' + encodeURIComponent(params.name || '');
+          queryParams += '&filters[$or][0][name][$containsi]=' + encodeURIComponent(params.name || '');
           queryParams += '&filters[$or][1][store_categories][Name][$containsi]=' + encodeURIComponent(params.categoryName || '');
         }
 
@@ -91,7 +91,6 @@ class QuantumForoRepositoryImpl implements QuantumForoRepository {
       }
     });
   }
-
   async resetPassword(password: string, passwordConfirmation: string, code: string): Promise<Either<DataError, any>> {
     return new Promise(async (resolver, _reject) => {
       try {
@@ -105,7 +104,18 @@ class QuantumForoRepositoryImpl implements QuantumForoRepository {
       }
     });
   }
-
+  async getAllStore(): Promise<Either<DataError, any[]>> {
+    return new Promise(async (resolver, _reject) => {
+      try {
+        const storeResult = await apiQForo.get(
+          `/stores`
+        );
+        resolver(Either.right(storeResult));
+      } catch (error) {
+        resolver(Either.left({ kind: 'UnexpectedError', error }));
+      }
+    });
+  }
   async getStoreById(id: string): Promise<Either<DataError, any>> {
     return new Promise(async (resolver, _reject) => {
       try {
@@ -114,11 +124,23 @@ class QuantumForoRepositoryImpl implements QuantumForoRepository {
         );
         resolver(Either.right(storeResult));
       } catch (error) {
+        console.log('error aca',error)
         resolver(Either.left({ kind: 'UnexpectedError', error }));
       }
     });
   }
-
+  async getEntrepreneurByStoreId(storeId: string): Promise<Either<DataError, any>> {
+    return new Promise(async (resolver, _reject) => {
+      try {
+        const entrepreneurResult = await apiQForo.get(
+          `/entrepreneurs/?populate=*&filters[$and][0][stores][id][$eq]=${storeId}`
+        );
+        resolver(Either.right(entrepreneurResult));
+      } catch (error) {
+        resolver(Either.left({ kind: 'UnexpectedError', error }));
+      }
+    });
+  }
   async getEntrepreneurById(id: string): Promise<Either<DataError, any>> {
     return new Promise(async (resolver, _reject) => {
       try {

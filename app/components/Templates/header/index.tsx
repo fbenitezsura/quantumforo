@@ -23,11 +23,23 @@ const ContainerHeader = () => {
 
     const [isFixed, setIsFixed] = useState(false);
     const [oldScroll, setOldScroll] = useState(0);
+    const [typePosition, setTypePosition] = useState('fixed');
+
+    useEffect(() => {
+        if(path === '/entrepreneurship') {
+            setTypePosition('absolute');
+        } else {
+            setTypePosition('fixed');
+        }
+    }, [path]);
 
     useEffect(() => {
         const handleScroll = () => {
+            if(path === '/entrepreneurship') {
+                return;
+            }
             const currentScroll = window.pageYOffset;
-            const limit = (path === '/' || path === '/entrepreneurship') ? 50 : 0;
+            const limit = (path === '/') ? 50 : 0;
             if (currentScroll > limit) {
                 setIsFixed(true);
             } else if (currentScroll <= limit && oldScroll > currentScroll) {
@@ -56,6 +68,7 @@ const ContainerHeader = () => {
         userLogged={userLogged}
         userInfo={userInfo}
         handleLogout={handleLogout}
+        typePosition={typePosition}
         />
     );
 }

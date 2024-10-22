@@ -1,13 +1,23 @@
-const CardEntrepreneurshipDesktop = ({ detailStore }) => {
+const CardEntrepreneurshipDesktop = ({ detailStore, detailEntrepreneur }) => {
+
+    console.log('detailEntrepreneur', detailEntrepreneur)
+
     return (
-        <div className="hidden md:block col-span-4 flex p-5 flex-col justify-center mr-10">
-            <h2 className="text-2xl font-bold text-center mb-[70px]">Detalles del Emprendedor</h2>
-            <div className="w-full flex justify-center">
-                <img src={'/entrepreneurship/1.avif'} className="h-[150px] w-[150px] rounded-full" />
+        <div className="col-span-12 grid grid-cols-12 p-5 mr-10">
+            <div className="flex justify-center col-span-4 flex-col items-center">
+                <img src={detailEntrepreneur?.imgUrl} className="h-[250px] w-[250px] rounded-full border-2" />
+                <h2 className="font-bold uppercase text-center text-[36px] mt-5">{detailEntrepreneur?.user.data.attributes.first_name} {detailEntrepreneur?.user.data.attributes.last_name}</h2>
             </div>
-            <div className="mt-5">
-                <p className="text-xl text-center font-bold mb-[20px]">Camilo Jose</p>
-                <p className="text-justify text-md">Soy Camilo José, un emprendedor apasionado por transformar ideas en realidades. Me dedico a identificar oportunidades y crear soluciones innovadoras que marcan la diferencia en el mercado. Me gusta asumir riesgos y liderar proyectos que generan impacto positivo y crecimiento sostenible.</p>
+            <div className="mt-5 col-span-8">
+                <p className="text-justify text-[18px]">{detailEntrepreneur?.description}</p>
+                <div className="mt-7">
+                    <button className="mr-3 px-6 py-2 rounded-full text-white font-bold bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500">
+                        Instagram
+                    </button>
+                    <button className="px-6 py-2 rounded-full text-white font-bold bg-gradient-to-r from-red-600 to-red-800">
+                        YouTube
+                    </button>
+                </div>
             </div>
         </div>
     );

@@ -5,8 +5,10 @@ import { SearchParams } from '@clean/domain/dtos/Store/searchDto';
 
 export interface QuantumForoRepository {
   searchStore(params: SearchParams): Promise<Either<DataError, any[]>>;
-  getAllStore(selectedCategory: string) : Promise<Either<DataError, any[]>>;
+  getStoreByCategory(selectedCategory: string) : Promise<Either<DataError, any[]>>;
+  getAllStore(): Promise<Either<DataError, any[]>>;
   getStoreById(id: string): Promise<Either<DataError, any>>;
+  getEntrepreneurByStoreId(storeId: string): Promise<Either<DataError, any>>;
   getEntrepreneurById(id: string): Promise<Either<DataError, any>>;
   login(loginData: any): Promise<Either<DataError, any>>;
   registerUser(registerData: any): Promise<Either<DataError, any>>;

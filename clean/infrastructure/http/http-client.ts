@@ -27,8 +27,9 @@ export class newInstanceFetch {
   }
 
   private async makeHeadersStrapi() {
+    const token = process.env.NEXT_PUBLIC_STRAPI_TOKEN || process.env.STRAPI_TOKEN;
     const headers = {
-      "Authorization": 'bearer ' + process.env.NEXT_PUBLIC_STRAPI_TOKEN,
+    "Authorization": 'bearer ' + token,
       'Content-Type': 'application/json',
       "Cache-Control": "max-age = 0"
     }
@@ -41,19 +42,24 @@ export class newInstanceFetch {
     options.headers = await this.makeHeadersStrapi();
 
     if (this.abortController) {
-      options.signal = this.abortController.signal;
+        options.signal = this.abortController.signal;
     }
 
-    const response = await fetch(this.baseUrl + url, options);
+    try {
+        const response = await fetch(this.baseUrl + url, options);
+        const result = await response.json();
 
-    const result = await response.json();
+        if (!response.ok) {
+            console.error("Error en la respuesta de Strapi:", result);
+            throw result;
+        }
 
-    if (!response.ok) {
-      throw (result);
+        return result;
+    } catch (error) {
+        console.error("Error en la solicitud fetch:", error);
+        throw error;
     }
-
-    return result;
-  }
+  } 
 
   public get<T = any>(url: string): Promise<T> {
     return this.fetch(url, { method: 'GET' });
@@ -76,4 +82,4 @@ export class newInstanceFetch {
   }
 }
 
-export const apiQForo = new newInstanceFetch(process.env.NEXT_PUBLIC_API_QUANTUM_FORO_URL || process.env.API_QUANTUM_FORO_URL);
+export const apiQForo = new newInstanceFetch(process.env.API_QUANTUM_FORO_URL || process.env.NEXT_PUBLIC_API_QUANTUM_FORO_URL);

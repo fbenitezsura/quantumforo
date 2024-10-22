@@ -11,7 +11,7 @@ interface FooterState {
 const initialState = {
   menuFooter: [],
   socialMedia: [],
-  lastUpdatedFooter: null,
+  lastUpdatedFooter: new Date(),
 };
 
 export const getMenuFooter = createAsyncThunk(

@@ -32,6 +32,8 @@ const ContainerFooter = () => {
     }
   }, [lastUpdatedFooter]);
 
+  console.log('menuFooter', menuFooter);
+
   return (
     <ViewFooter
     menuFooter={menuFooter}

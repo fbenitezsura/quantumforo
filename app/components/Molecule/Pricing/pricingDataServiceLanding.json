@@ -1,0 +1,89 @@
+{
+    "user": {
+      "id": "user_12345",
+      "email": "example@email.com",
+      "name": "John Doe",
+      "subscriptionId": "sub_98765",
+      "createdAt": "2024-10-21T00:00:00.000Z",
+      "updatedAt": "2024-10-21T00:00:00.000Z"
+    },
+    "products": [
+      {
+        "id": "prod_1",
+        "name": "Plan Basico - Landing",
+        "description": "Perfecto para crear landing sobre tus servicios.",
+        "prices": [
+          {
+            "id": "price_1_monthly",
+            "productId": "prod_1",
+            "unit_amount": 9900,
+            "currency": "CLP",
+            "interval": "month",
+            "active": true,
+            "createdAt": "2024-10-21T00:00:00.000Z",
+            "updatedAt": "2024-10-21T00:00:00.000Z"
+          },
+          {
+            "id": "price_1_yearly",
+            "productId": "prod_1",
+            "unit_amount": 99000,
+            "currency": "CLP",
+            "interval": "year",
+            "active": true,
+            "createdAt": "2024-10-21T00:00:00.000Z",
+            "updatedAt": "2024-10-21T00:00:00.000Z"
+          }
+        ],
+        "active": true,
+        "createdAt": "2024-10-21T00:00:00.000Z",
+        "updatedAt": "2024-10-21T00:00:00.000Z"
+      },
+      {
+        "id": "prod_2",
+        "name": "Plan Pro - Servicios",
+        "description": "Ideal servicios mas complejos que necesitan mas espacio para explicar.",
+        "prices": [
+          {
+            "id": "price_2_monthly",
+            "productId": "prod_2",
+            "unit_amount": 19000,
+            "currency": "CLP",
+            "interval": "month",
+            "active": true,
+            "createdAt": "2024-10-21T00:00:00.000Z",
+            "updatedAt": "2024-10-21T00:00:00.000Z"
+          },
+          {
+            "id": "price_2_yearly",
+            "productId": "prod_2",
+            "unit_amount": 190000,
+            "currency": "CLP",
+            "interval": "year",
+            "active": true,
+            "createdAt": "2024-10-21T00:00:00.000Z",
+            "updatedAt": "2024-10-21T00:00:00.000Z"
+          }
+        ],
+        "active": true,
+        "createdAt": "2024-10-21T00:00:00.000Z",
+        "updatedAt": "2024-10-21T00:00:00.000Z"
+      }
+    ],
+    "subscription": {
+      "id": "sub_98765",
+      "userId": "user_12345",
+      "productId": "prod_1",
+      "priceId": "price_1_monthly",
+      "status": "active",
+      "startDate": "2024-10-21T00:00:00.000Z",
+      "endDate": null,
+      "createdAt": "2024-10-21T00:00:00.000Z",
+      "updatedAt": "2024-10-21T00:00:00.000Z",
+      "prices": {
+        "products": {
+          "name": "Basic Plan"
+        }
+      }
+    }
+  }
+  

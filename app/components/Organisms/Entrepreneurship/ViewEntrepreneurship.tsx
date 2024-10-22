@@ -4,31 +4,31 @@ import MapComponent from '@components/Molecule/GoogleMaps/index';
 import StoreCard from '@components/Molecule/shop/card/index';
 import { useState } from 'react';
 import ContainerDraggable from '../../Templates/Draggable';
+import ChangeView from '@components/Molecule/Entrepreneurship/ChangeView';
 
 const ViewEntrepreneurship = ({
     city,
     loadingStore,
-    listStore
+    listStore,
+    viewType,
+    setViewType,
+    hoveredMarker,
+    setHoveredMarker,
+    clickMarker,
+    setClickMarker
 }) => {
 
-    const center = {
-        lat: -33.4489, // Coordenadas de ejemplo (Santiago, Chile)
-        lng: -70.6693,
-    };
-
     return (
-        <div className="">
+        <div className="flex flex-col h-screen">
             <div className="w-full">
                 <Banner />
             </div>
-            <div className="w-full grid grid-cols-12 md:px-5 pt-5 pb-10 relative">
-                <div className="col-span-12 h-[350px] block md:hidden">
-                    <MapComponent
-                        center={center}
-                    />
-                </div>
-                <div className="mt-2 mr-4 hidden md:block col-span-8 min-h-[500px]">
-                    <span className="text-md">{listStore?.length || 0} emprendimientos en <strong>{city}</strong></span>
+            <div className="flex flex-1 md:px-5 pt-5 pb-10 relative">
+                {/* Lista de Tiendas */}
+                <div className="flex-1 overflow-auto mr-4">
+                    <span className="text-md">
+                        {listStore?.length || 0} Emprendimientos {city && `en ${city}`}
+                    </span>
                     {loadingStore && (
                         <div className="mt-16 text-center">
                             <span>Cargando emprendimientos...</span>
@@ -39,85 +39,50 @@ const ViewEntrepreneurship = ({
                             <span>No se encontraron emprendimientos.</span>
                         </div>
                     )}
-                    <ul className="grid grid-cols-12 gap-4">
-                        {listStore?.map((store, index) => {
-                            return (
-                                <StoreCard
-                                    className="col-span-12 md:col-span-4"
-                                    id={store?.id}
-                                    key={store?.url}  // Usar 'url' o un identificador único si está disponible
-                                    name={store?.Name}
-                                    description={store?.Description}
-                                    categories={store?.categories}
-                                    image={store?.imgUrl}
-                                    color={store?.backgroundColor || 'bg-white'}
-                                    url={store?.Url}
-                                />
-                            )
-                        })}
+                    <ul className="grid grid-cols-12 gap-4 mt-4">
+                        {listStore?.map((store) => (
+                            <StoreCard
+                                className="col-span-12 950:col-span-6 xl:col-span-4"
+                                id={store?.id}
+                                key={store?.url}
+                                name={store?.name}
+                                description={store?.description}
+                                categories={store?.store_categories}
+                                image={store?.imgUrl}
+                                color={store?.backgroundColor || 'bg-white'}
+                                url={store?.Url}
+                                setHoveredMarker={setHoveredMarker}
+                            />
+                        ))}
                     </ul>
+                </div>
 
+                {/* Mapa Fijo */}
+                <div className="hidden 950:block xl:w-1/3 relative">
+                    <div className="sticky top-0 h-screen">
+                        <MapComponent
+                            apiKey="AIzaSyDKamSrVlGgJge4zLs8ET7vF2jPqzkpdPk"
+                            center={{ lat: 39.8283, lng: -98.5795 }}
+                            listStore={listStore}
+                            hoveredMarker={hoveredMarker}
+                            setHoveredMarker={setHoveredMarker}
+                            clickMarker={clickMarker}
+                            setClickMarker={setClickMarker}
+                            containerStyle={{
+                                width: '100%',
+                                height: '100%',
+                            }}
+                        />
+                    </div>
                 </div>
-                <div className="col-span-4 hidden md:block h-auto">
-                    <MapComponent
-                        center={center}
-                    />
-                </div>
+
+                {/* Mapa en Pantallas Pequeñas */}
                 <div className="md:hidden col-span-12 h-[200px]">
-                    <ContainerDraggable 
-                    
-                    />
+                    <ContainerDraggable />
                 </div>
-                {/* Modal view 
-                <div
-                    style={{
-                        position: 'absolute',
-                        top: position + 'px',
-                        left: 0,
-                        right: 0,
-                        height: '300px',
-                        backgroundColor: '#fff',
-                        cursor: 'grab',
-                        borderTopLeftRadius: '16px',
-                        borderTopRightRadius: '16px',
-                        transition: 'top 0.3s ease',
-                        boxShadow: '0 -2px 10px rgba(0,0,0,0.2)',
-                    }}
-                    onMouseDown={startDrag}
-                    className="absolute md:hidden h-[500px] w-full top-[10%] bg-white rounded-t-3xl px-5 pb-5 pt-2">
-                    <div className="w-full flex justify-center">
-                        <div className="w-[40px] h-[4px] bg-[#ccc] rounded-full"></div>
-                    </div>
-                    <div className="w-full flex flex-col text-center justify-center mt-5">
-                        <span className="font-medium">{listStore?.length || 0} lugares dentro de la zona de busqueda</span>
-                        {listStore?.length === 0 && !loadingStore && (
-                            <div className="mt-16">
-                                <span className="text-xl font-bold">No se encontraron emprendimientos.</span>
-                            </div>
-                        )}
-                    </div>
-                    <div className="w-full flex justify-center">
-                        <ul className="grid grid-cols-12 gap-4">
-                            {listStore?.map((store, index) => {
-                                return (
-                                    <StoreCard
-                                        className="col-span-12 md:col-span-4"
-                                        id={store?.id}
-                                        key={store?.url}  // Usar 'url' o un identificador único si está disponible
-                                        name={store?.Name}
-                                        description={store?.Description}
-                                        categories={store?.categories}
-                                        image={store?.imgUrl}
-                                        color={store?.backgroundColor || 'bg-white'}
-                                        url={store?.Url}
-                                    />
-                                )
-                            })}
-                        </ul>
-                    </div>
-                </div>*/}
             </div>
         </div>
+
     )
 }
 

@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import ContainerHeader from '@components/Templates/header/index';
+import ContainerFooter from '@components/Templates/Footer/ContainerFooter';
 import "./globals.css";
+import '@splidejs/react-splide/css';
 import clsx from 'clsx';
 import { ReduxProvider } from "@providers/redux-provider";
 import PopUpNotifications from "@/app/components/Molecule/PopUpNotification/index";
@@ -28,6 +30,7 @@ export default function RootLayout({
         <ReduxProvider>
           <ContainerHeader />
           {children}
+          <ContainerFooter />
           <PopUpNotifications />
         </ReduxProvider>
       </body>

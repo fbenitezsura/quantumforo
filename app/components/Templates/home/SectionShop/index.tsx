@@ -24,13 +24,7 @@ const SectionShop = () => {
   };
 
   return (
-    <ViewSectionShop
-      storesData={categories}
-      loadingGetStore={loadingGetStore}
-      listStore={listStore}
-      handleSelectedCategory={handleSelectedCategory}
-      categorySelected={categorySelected}
-    />
+    null
   );
 }
 

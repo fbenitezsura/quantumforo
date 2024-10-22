@@ -21,7 +21,7 @@ class QuantumForoUseCase implements QuantumForoRepository {
       })
       .run();
   }
-  async getAllStore(selectedCategory: string) : Promise<Either<DataError, any[]>> {
+  async getStoreByCategory(selectedCategory: string) : Promise<Either<DataError, any[]>> {
     const storeResult = EitherAsync.fromPromise(this.qfRepo.getAllStore(selectedCategory));
 
     return storeResult
@@ -43,11 +43,29 @@ class QuantumForoUseCase implements QuantumForoRepository {
   async resetPassword(password: string,passwordConfirmation :string, code: string): Promise<Either<DataError, any>> {
     return this.qfRepo.resetPassword(password,passwordConfirmation,code);
   } 
+  async getAllStore(): Promise<Either<DataError, any[]>> {
+    const storeResult = EitherAsync.fromPromise(this.qfRepo.getAllStore());
+    return storeResult
+      .flatMap(async (details) => {
+        const cleanDetails = transformDetailData(details);
+        return Either.right(cleanDetails);
+      })
+      .run();
+  }
   async getStoreById(id: string): Promise<Either<DataError, any>> {
     const storeResult = EitherAsync.fromPromise(this.qfRepo.getStoreById(id));
     return storeResult
       .flatMap(async (details) => {
         const cleanDetails = transformDetailData(details);
+        return Either.right(cleanDetails);
+      })
+      .run();
+  }
+  async getEntrepreneurByStoreId(id: string): Promise<Either<DataError, any>> {
+    const storeResult = EitherAsync.fromPromise(this.qfRepo.getEntrepreneurByStoreId(id));
+    return storeResult
+      .flatMap(async (details) => {
+        const cleanDetails = transformDetailLeaderBoardMenu(details);
         return Either.right(cleanDetails);
       })
       .run();

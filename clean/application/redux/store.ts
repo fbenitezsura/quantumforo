@@ -11,6 +11,7 @@ import Store from './store/store.slice';
 import Banners from './banners/banners.slice';
 import Categories from './categories/categories.slice';
 import Currency from './currency/currency.slice';
+import Home from './home/home.slice';
 import Footer from './footer/footer.slice';
 import Language from './language/language.slice';
 import Layout from './layout/layout.slice';
@@ -29,6 +30,7 @@ const rootReducer = combineReducers({
   Register,
   Store,
   Banners,
+  Home,
   Categories,
   Language,
   Layout,

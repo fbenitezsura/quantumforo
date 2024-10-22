@@ -10,10 +10,12 @@ type Props = {
   }
 
 const getDetailStore = async (id) => {
+    console.log(id)
     const storeResult = await quantumForoService.getStoreById(id);
     let store = null;
     storeResult.fold(
         (err) => {
+            console.log(err )
             return null;
         },
         (storeInfo) => {
@@ -25,29 +27,33 @@ const getDetailStore = async (id) => {
 }
 
 const getDetailEntrepeneur = async (id) => {
-    const storeResult = await quantumForoService.getEntrepreneurById(id);
-    let store = null;
+    const storeResult = await quantumForoService.getEntrepreneurByStoreId(id);
+    let entrepreneur = null;
     storeResult.fold(
         (err) => {
+            console.log('err',err)
             return null;
         },
-        (storeInfo) => {
-            store = storeInfo;
+        (entrepeneurInfo) => {
+            entrepreneur = entrepeneurInfo;
         }
     );
-    return store;
+    return entrepreneur;
     
 }
 
-const PageProfile = async ({ params }: Props) => {
+const PageStore = async ({ params }: Props) => {
 
     const detailStore = await getDetailStore(params?.id);
+
+    const detailEntrepreneur = await getDetailEntrepeneur(params?.id);
 
     return (
         <ContainerStore 
         detailStore={detailStore}
+        detailEntrepreneur={detailEntrepreneur}
         />
     )
 }
 
-export default PageProfile;
+export default PageStore;
