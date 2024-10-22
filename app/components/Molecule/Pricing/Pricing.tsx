@@ -17,7 +17,7 @@ interface PriceWithProduct {
 interface SubscriptionWithProduct {
   prices: any | null;
 }
-
+ 
 interface Props {
   user: any | null | undefined;
   products: ProductWithPrices[];
