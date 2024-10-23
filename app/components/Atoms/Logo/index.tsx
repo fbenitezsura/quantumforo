@@ -12,7 +12,8 @@ const Logo = ({
       <img
         alt="icon.png"
         src={'/logo/logo.jpg'}
-        className="h-full w-full"
+        className="h-full"
+        width={width}
       />
     </Link>
   );

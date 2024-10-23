@@ -2,6 +2,7 @@
 import { Splide } from '@splidejs/react-splide';
 import SlideBanner from '@components/Molecule/slider/slides/Banner';
 import SlideCardEntrepreneurship from '@components/Molecule/slider/slides/CardEntrepreneurship/index';
+import SlideCardCategory from '@components/Molecule/slider/slides/CardCategory/index';
 
 interface Slider {
     data?: Array<any>
@@ -34,6 +35,14 @@ const Slider = ({
                 if (typeSlider === 'cardEnterpreneurship') {
                     return (
                         <SlideCardEntrepreneurship
+                            slideProps={slideProps}
+                        />
+                    )
+                }
+
+                if (typeSlider === 'cardCategory') {
+                    return (
+                        <SlideCardCategory
                             slideProps={slideProps}
                         />
                     )

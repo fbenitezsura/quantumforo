@@ -1,6 +1,7 @@
 import LayoutUseCase from '@clean/domain/useCase/layoutUseCase';
 import LayoutRepositoryImpl from '@clean/infrastructure/repositories/layoutRepositoryImpl';
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
+import { title } from 'process';
 
 const layoutRepo = new LayoutRepositoryImpl();
 const layoutService = new LayoutUseCase(layoutRepo);
@@ -60,7 +61,10 @@ const initialState = {
         "latitud": "-37.03386",
         "longitud": "-73.14019"
     }],
-    featuredCategory: [],
+    featuredCategory: [{
+        urlImg: 'https://quantumforo.imgix.net/store/store1.png',
+        title: 'Moda'
+    }],
     showShopPlans: true,
     showServicePlans: true
 };

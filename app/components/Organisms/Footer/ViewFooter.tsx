@@ -37,9 +37,9 @@ const ViewFooter: React.FC<any> = ({
   };
 
   return (
-    <div className="nc-Footer relative py-16 lg:py-28 border-t border-neutral-200 dark:border-neutral-700">
-      <div className="container grid grid-cols-2 gap-y-10 gap-x-5 sm:gap-x-8 md:grid-cols-3 lg:grid-cols-5 lg:gap-x-10 ">
-        <div className="grid grid-cols-4 gap-5 col-span-2 md:col-span-4 lg:md:col-span-1 lg:flex lg:flex-col">
+    <div className="nc-Footer relative py-16 border-t border-neutral-200 dark:border-neutral-700">
+      <div className="container grid grid-cols-2 gap-y-5 gap-x-5 sm:gap-x-8 md:grid-cols-3 lg:grid-cols-5 lg:gap-x-10 ">
+        <div className="grid grid-cols-4 gap-5 col-span-2 md:col-span-4 lg:md:col-span-2 lg:flex lg:flex-col">
           <div className="col-span-2 md:col-span-1 ml-5">
             <Logo
               width={120}
@@ -52,6 +52,58 @@ const ViewFooter: React.FC<any> = ({
           </div>
         </div>
         {[{
+          section: {
+            title: 'Company',
+            menu: [
+              {
+                text: 'About',
+                href: 'about',
+              },
+              {
+                text: 'Contact',
+                href: 'contact',
+              },
+              {
+                text: 'Careers',
+                href: 'careers',
+              },
+              {
+                text: 'Press',
+                href: 'press',
+              },
+              {
+                text: 'Blog',
+                href: 'blog',
+              },
+            ]
+          }
+        },{
+          section: {
+            title: 'Company',
+            menu: [
+              {
+                text: 'About',
+                href: 'about',
+              },
+              {
+                text: 'Contact',
+                href: 'contact',
+              },
+              {
+                text: 'Careers',
+                href: 'careers',
+              },
+              {
+                text: 'Press',
+                href: 'press',
+              },
+              {
+                text: 'Blog',
+                href: 'blog',
+              },
+            ]
+          }
+        },{
           section: {
             title: 'Company',
             menu: [

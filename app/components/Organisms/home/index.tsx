@@ -49,9 +49,9 @@ const ViewHome = ({
                 />
             </div>
             <div className="w-full max-h-[500px] max-w-[1200px] mx-auto mt-10">
-                <h2 className="text-center">Emprendimientos  de tu zona</h2>
-                <p className="text-center">Concepcion</p>
-                <div className="sticky top-0 h-screen">
+                <h2 className="text-center text-2xl font-bold">Emprendimientos  de tu zona</h2>
+                <p className="text-center text-xl">Concepcion</p>
+                <div className="mt-5">
                     <MapComponent
                         apiKey="AIzaSyDKamSrVlGgJge4zLs8ET7vF2jPqzkpdPk"
                         center={{ lat: 39.8283, lng: -98.5795 }}
@@ -67,11 +67,16 @@ const ViewHome = ({
                     />
                 </div>
             </div>
-            <div className="w-full max-w-[1200px] mx-auto mt-20">
+            <div className="w-full max-w-[1200px] mx-auto mt-[120px]">
                 <h2 className="text-2xl font-bold">Categorias destacadas</h2>
                 <Slider
-                    typeSlider={'banner'}
+                    typeSlider={'cardCategory'}
                     data={featuredCategory}
+                    options={{
+                        type: 'loop',
+                        perPage: isMobile ? 1 : 5,
+                        gap: '1rem',
+                    }}
                 />
             </div>
             <div className="w-full max-w-[1200px] mx-auto mt-10">

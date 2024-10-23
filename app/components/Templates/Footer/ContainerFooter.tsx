@@ -23,7 +23,8 @@ const ContainerFooter = () => {
 
   useEffect(() => {
     if (lastUpdatedFooter !== null) {
-      const limitCache = addMinutes(parseISO(lastUpdatedFooter), CACHE_FOOTER);
+      const dateToParse = typeof lastUpdatedFooter === 'string' ? parseISO(lastUpdatedFooter) : lastUpdatedFooter;
+      const limitCache = addMinutes(dateToParse, CACHE_FOOTER);
       if (isAfter(new Date(), limitCache)) {
         dispatch(getMenuFooter());
       }
@@ -36,8 +37,8 @@ const ContainerFooter = () => {
 
   return (
     <ViewFooter
-    menuFooter={menuFooter}
-    socialMedia={socialMedia}
+      menuFooter={menuFooter}
+      socialMedia={socialMedia}
     />
   );
 };
