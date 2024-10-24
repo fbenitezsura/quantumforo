@@ -1,10 +1,12 @@
 import Banner from '@/app/components/Molecule/Banner/index';
 import Pricing from '@components/Molecule/Pricing/Pricing'
 import Slider from '@components/Molecule/slider/index';
-import MapComponent from '@components/Molecule/GoogleMaps/index';
+import ContainerZone from '@components/Templates/home/EntrepreneurshipForZone/ContainerZone';
 import TextGenerateEffect from '@components/Molecule/TextGenerateEffect/TextGenerateEffect';
 import pricingDataShop from '@components/Molecule/Pricing/pricingDataShop.json';
 import pricingDataLanding from '@components/Molecule/Pricing/pricingDataServiceLanding.json';
+import InfiniteMovingCards from '@components/Molecule/Testimonials/InfiniteCards';
+import { testimonials } from '@data/index';
 
 const ViewHome = ({
     hoveredMarker,
@@ -25,7 +27,7 @@ const ViewHome = ({
                 <Banner />
             </div>
             <div className="w-full max-w-[1200px] mx-2 md:mx-auto mt-10">
-                <h2 className="text-2xl font-bold">Emprendimientos Destacados</h2>
+                <h2 className="text-2xl font-bold text-center md:text-left">Emprendimientos Destacados</h2>
                 <Slider
                     typeSlider={'cardEnterpreneurship'}
                     data={featuredEntrepreneurship}
@@ -37,7 +39,7 @@ const ViewHome = ({
                 />
             </div>
             <div className="w-full max-w-[1200px] mx-auto mt-10">
-                <h2 className="text-2xl font-bold">Emprendimientos Nuevos</h2>
+                <h2 className="text-2xl font-bold text-center md:text-left">Emprendimientos Nuevos</h2>
                 <Slider
                     typeSlider={'cardEnterpreneurship'}
                     data={newEntrepreneurship}
@@ -48,53 +50,47 @@ const ViewHome = ({
                     }}
                 />
             </div>
-            <div className="w-full max-h-[500px] max-w-[1200px] mx-auto mt-10">
-                <h2 className="text-center text-2xl font-bold">Emprendimientos  de tu zona</h2>
-                <p className="text-center text-xl">Concepcion</p>
-                <div className="mt-5">
-                    <MapComponent
-                        apiKey="AIzaSyDKamSrVlGgJge4zLs8ET7vF2jPqzkpdPk"
-                        center={{ lat: 39.8283, lng: -98.5795 }}
-                        listStore={listStoreInZone}
-                        hoveredMarker={hoveredMarker}
-                        setHoveredMarker={setHoveredMarker}
-                        clickMarker={clickMarker}
-                        setClickMarker={setClickMarker}
-                        containerStyle={{
-                            width: '100%',
-                            height: '500px',
-                        }}
-                    />
-                </div>
-            </div>
-            <div className="w-full max-w-[1200px] mx-auto mt-[120px]">
-                <h2 className="text-2xl font-bold">Categorias destacadas</h2>
+            <ContainerZone />
+
+            <div className="w-full max-w-[1200px] mx-auto md:mt-[120px] mt-[180px]">
+                <h2 className="text-2xl font-bold mb-5 text-center">Categorias destacadas</h2>
                 <Slider
                     typeSlider={'cardCategory'}
                     data={featuredCategory}
                     options={{
                         type: 'loop',
                         perPage: isMobile ? 1 : 5,
-                        gap: '1rem',
+                        gap: '10px',
                     }}
                 />
             </div>
             <div className="w-full max-w-[1200px] mx-auto mt-10">
-                <TextGenerateEffect
-                    words="QUANTUM FORO"
-                    className="text-center text-[40px] md:text-5xl lg:text-6xl text-black"
-                />
-                <div className="grid grid-cols-12">
-                    <div className="col-span-12 p-1 md:p-0 md:col-span-6">
-                        <p>Nuestra plataforma conecta a los usuarios con los mejores emprendimientos locales de manera rápida y sencilla, destacando el poder de las pequeñas y medianas empresas como motores clave de la economía local. Hemos creado un espacio donde puedes descubrir tiendas, servicios y productos cercanos a ti, organizados en categorías como moda, gastronomía, tecnología y servicios sustentables. Con una interfaz intuitiva y funcionalidad de geolocalización avanzada, te ayudamos a explorar y encontrar lo mejor que tu comunidad tiene para ofrecer, desde un café cercano hasta un servicio especializado.</p>
+                <div className="flex-col md:flex h-auto">
+                    <TextGenerateEffect
+                        words="Para todos, desde emprendedores hasta empresas"
+                        className="text-center md:text-left text-[35px] leading-[4rem] text-black"
+                    />
+                    <p className="text-center md:text-right md:mt-[60px]">Millones de comerciantes de todos los tamaños han generado colectivamente $1.000.000.000.000 en ventas en QuantumForo.</p>
+                </div>
+
+                <div className="grid grid-cols-12 gap-5 mt-10">
+                    <div className="col-span-12 md:col-span-4 flex flex-col items-center">
+                        <img className="rounded-md h-[250px]" src="/home/w1.jpg" alt="for-entrepreneurs" />
+                        <h2 className="text-2xl font-bold mt-8">Comienza con rapidez</h2>
+                        <p className="text-justify mt-3 px-3 md:px-0">Iniciar un proyecto con rapidez es fundamental para aprovechar oportunidades. Actuar ágilmente permite a los emprendedores establecerse en el mercado y ajustar su oferta según la retroalimentación. Esta rapidez fomenta la innovación y la confianza, esenciales para enfrentar los desafíos del emprendimiento.</p>
+
                     </div>
-                    <div className="col-span-12 p-1 md:p-0 md:col-span-6">
-                        <ul>
-                            <li><strong>Búsqueda por ubicación:</strong> Encuentra emprendimientos según tu ubicación actual o selecciona una zona de interés.</li>
-                            <li><strong>Categorías personalizadas:</strong> Descubre negocios locales organizados por rubros como moda, gastronomía, tecnología, y más.</li>
-                            <li><strong>Recomendaciones y reseñas:</strong> Lee valoraciones de otros usuarios y descubre los emprendimientos más destacados.</li>
-                            <li><strong>Ofertas exclusivas:</strong> Accede a promociones y descuentos especiales de los emprendimientos cercanos.</li>
-                        </ul>
+                    <div className="col-span-12 md:col-span-4 flex flex-col items-center">
+                        <img className="rounded-md h-[250px]" src="/home/w2.jpg" alt="for-entrepreneurs" />
+                        <h2 className="text-2xl font-bold mt-8">Crece todo lo que quieras</h2>
+                        <p className="text-justify mt-3 px-3 md:px-0">Una pequeña empresa que comenzó en un garaje ha crecido exponencialmente para convertirse en un líder en su industria, alcanzando ventas anuales que superan los 500 millones de dólares.</p>
+
+                    </div>
+                    <div className="col-span-12 md:col-span-4 flex flex-col items-center">
+                        <img className="rounded-md h-[250px]" src="/home/w3.jpg" alt="for-entrepreneurs" />
+                        <h2 className="text-left text-2xl font-bold mt-8">Aumenta las expectativas</h2>
+                        <p className="text-justify mt-3 px-3 md:px-0">Esta innovadora plataforma de eCommerce ha transformado el panorama del comercio en línea al proporcionar a emprendedores la oportunidad de establecer sus propias tiendas y promocionar sus productos de manera efectiva. Con herramientas intuitivas y estrategias de marketing digital, la plataforma permite a las marcas alcanzar a un público más amplio, impulsando sus ventas y creciendo en un mercado competitivo.</p>
+
                     </div>
                 </div>
             </div>
@@ -119,6 +115,78 @@ const ViewHome = ({
                     />
                 </div>
             )}
+            <div className="w-full max-w-[1200px] mx-auto mt-10">
+                <div className="flex h-auto">
+                    <TextGenerateEffect
+                        words="Encuentra a tus clientes más leales"
+                        className="text-center text-[35px] leading-[4rem] text-black"
+                    />
+                </div>
+
+                <div className="grid grid-cols-12 gap-5 md:mt-10">
+                    <div className="col-span-12 md:col-span-6 flex flex-col items-center p-5 rounded-md">
+                        <img className="rounded-md h-[330px]" src="/home/c1.jpg"></img>
+                        <h2 className="mt-10 text-2xl text-black font-bold text-left">Llega a los clientes adecuados por menos</h2>
+                        <p className="text-justify mt-2">Atrae nuevos clientes y haz que vuelvan por más con herramientas de marketing integradas e Informes y estadísticas útiles.</p>
+
+                    </div>
+                    <div className="col-span-12 md:col-span-6 flex flex-col items-center p-5 rounded-md">
+                        <img className="rounded-md h-[330px]" src="/home/c2.jpg" alt="for-entrepreneurs" />
+                        <h2 className="mt-10 text-2xl text-black font-bold text-left">Impulsa el crecimiento con B2B</h2>
+                        <p className="text-justify mt-2">Crea experiencias personalizadas para compradores mayoristas con fijación de precios, descuentos y condiciones de pago flexibles.</p>
+
+                    </div>
+                </div>
+            </div>
+            <div className="w-full max-w-[1200px] mx-auto mt-10">
+                <h2 className="text-center text-4xl">Es muy fácil comenzar a vender</h2>
+                <div className="grid grid-cols-12 mt-14">
+                    <div className="col-span-12 md:col-span-8 flex gap-3 h-auto relative">
+                        <Slider
+                            typeSlider={'cardImg'}
+                            data={[{
+                                urlImg: "/home/v1.jpg"
+                            },{
+                                urlImg: "/home/v2.jpg"
+                            }]}
+                            options={{
+                                type: 'loop',
+                                perPage: 1
+                            }}
+                        />
+
+                    </div>
+                    <div className="col-span-12 md:col-span-4 mt-10 md:mt-0 px-5 md:px-0">
+                        <ul>
+                            <li className="flex">
+                                <span className="mr-5">01</span> <p className="w-full pb-2 border-b-2 text-2xl">Agrega tu primer producto</p>
+                            </li>
+                            <li className="flex mt-5">
+                                <span className="mr-5">02</span> <p className="w-full pb-2 border-b-2 text-2xl">Personaliza tu tienda</p>
+                            </li>
+                            <li className="flex mt-5">
+                                <span className="mr-5">03</span> <p className="w-full pb-2 border-b-2 text-2xl">Configura pagos</p>
+                            </li>
+                            <li className="mt-10 flex justify-center">
+                                <button className="min-w-[150px] border bg-white rounded-full p-5">Comienza ya</button>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div className="flex flex-col items-center max-lg:mt-10">
+                <div
+                    // remove bg-white dark:bg-black dark:bg-grid-white/[0.05], h-[40rem] to 30rem , md:h-[30rem] are for the responsive design
+                    className="h-[50vh] md:h-[30rem] rounded-md flex flex-col antialiased  items-center justify-center relative overflow-hidden"
+                >
+                    <InfiniteMovingCards
+                        items={testimonials}
+                        direction="right"
+                        speed="slow"
+                    />
+                </div>
+            </div>
+
         </>
     );
 }

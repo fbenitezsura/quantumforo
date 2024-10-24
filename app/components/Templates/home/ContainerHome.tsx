@@ -21,9 +21,7 @@ interface StoreLocation {
 }
 
 const ContainerHome = () => {
-
-    const [hoveredMarker, setHoveredMarker] = React.useState<StoreLocation | null>(null);
-    const [clickMarker, setClickMarker] = React.useState<StoreLocation | null>(null);
+    
     const isMobile = useCheckMobileScreen();
 
     const {
@@ -35,18 +33,14 @@ const ContainerHome = () => {
     } = useSelector((state: RootState) => state.Home);
 
     return (
-        <ViewHome 
-        hoveredMarker={hoveredMarker}
-        setHoveredMarker={setHoveredMarker}
-        clickMarker={clickMarker}
-        setClickMarker={setClickMarker}
-        featuredEntrepreneurship={featuredEntrepreneurship}
-        newEntrepreneurship={newEntrepreneurship}
-        featuredCategory={featuredCategory}
-        showShopPlans={showShopPlans}
-        showServicePlans={showServicePlans}
-        listStoreInZone={[]}
-        isMobile={isMobile}
+        <ViewHome
+            featuredEntrepreneurship={featuredEntrepreneurship}
+            newEntrepreneurship={newEntrepreneurship}
+            featuredCategory={featuredCategory}
+            showShopPlans={showShopPlans}
+            showServicePlans={showServicePlans}
+            listStoreInZone={[]}
+            isMobile={isMobile}
         />
     );
 }

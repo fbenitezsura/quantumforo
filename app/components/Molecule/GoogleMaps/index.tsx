@@ -34,7 +34,7 @@ interface MapComponentProps {
 const MapComponent: React.FC<MapComponentProps> = ({
   apiKey,
   center,
-  zoom = 5,
+  zoom = 14,
   containerStyle = { width: '100%', height: '100%' },
   listStore = [],
   setHoveredMarker,

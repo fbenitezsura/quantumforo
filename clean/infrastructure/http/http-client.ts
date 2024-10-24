@@ -83,3 +83,4 @@ export class newInstanceFetch {
 }
 
 export const apiQForo = new newInstanceFetch(process.env.API_QUANTUM_FORO_URL || process.env.NEXT_PUBLIC_API_QUANTUM_FORO_URL);
+export const apiData = new newInstanceFetch('https://api.ipdata.co');

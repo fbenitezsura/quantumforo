@@ -8,6 +8,7 @@ const layoutService = new LayoutUseCase(layoutRepo);
 
 const initialState = {
     featuredEntrepreneurship: [{
+        "id": 1,
         "name": "Bless Colors",
         "url": "https://blesscolor-front.vercel.app/",
         "description": "Tienda Sustentable con los mejores productos",
@@ -21,7 +22,8 @@ const initialState = {
         "latitud": "-37.03386",
         "longitud": "-73.14019"
     },{
-        "name": "Bless Colors",
+        "id": 2,
+        "name": "Mary Cris",
         "url": "https://blesscolor-front.vercel.app/",
         "description": "Tienda Sustentable con los mejores productos",
         "location": "Concepción",
@@ -29,13 +31,28 @@ const initialState = {
         "createdAt": "2024-08-14T14:50:55.144Z",
         "updatedAt": "2024-09-22T02:52:53.801Z",
         "publishedAt": "2024-08-14T14:50:57.598Z",
-        "imgUrl": "https://quantumforo.imgix.net/store/store1.png",
+        "imgUrl": "https://quantumforo.imgix.net/store/store2.png",
+        "backgroundColor": "#008f39",
+        "latitud": "-37.03386",
+        "longitud": "-73.14019"
+    },
+    {
+        "id": 3,
+        "name": "Ehf Concept",
+        "url": "https://blesscolor-front.vercel.app/",
+        "description": "Tienda Sustentable con los mejores productos",
+        "location": "Concepción",
+        "coverageArea": "Todo Chile",
+        "createdAt": "2024-08-14T14:50:55.144Z",
+        "updatedAt": "2024-09-22T02:52:53.801Z",
+        "publishedAt": "2024-08-14T14:50:57.598Z",
+        "imgUrl": "https://quantumforo.imgix.net/store/store3.png",
         "backgroundColor": "#008f39",
         "latitud": "-37.03386",
         "longitud": "-73.14019"
     }],
     newEntrepreneurship: [{
-        "name": "Bless Colors",
+        "name": "Happy Paws",
         "url": "https://blesscolor-front.vercel.app/",
         "description": "Tienda Sustentable con los mejores productos",
         "location": "Concepción",
@@ -43,12 +60,12 @@ const initialState = {
         "createdAt": "2024-08-14T14:50:55.144Z",
         "updatedAt": "2024-09-22T02:52:53.801Z",
         "publishedAt": "2024-08-14T14:50:57.598Z",
-        "imgUrl": "https://quantumforo.imgix.net/store/store1.png",
+        "imgUrl": "https://quantumforo.imgix.net/store/store4.png",
         "backgroundColor": "#008f39",
         "latitud": "-37.03386",
         "longitud": "-73.14019"
     },{
-        "name": "Bless Colors",
+        "name": "Da Vinci",
         "url": "https://blesscolor-front.vercel.app/",
         "description": "Tienda Sustentable con los mejores productos",
         "location": "Concepción",
@@ -56,14 +73,26 @@ const initialState = {
         "createdAt": "2024-08-14T14:50:55.144Z",
         "updatedAt": "2024-09-22T02:52:53.801Z",
         "publishedAt": "2024-08-14T14:50:57.598Z",
-        "imgUrl": "https://quantumforo.imgix.net/store/store1.png",
+        "imgUrl": "https://quantumforo.imgix.net/store/store5.png",
         "backgroundColor": "#008f39",
         "latitud": "-37.03386",
         "longitud": "-73.14019"
     }],
     featuredCategory: [{
-        urlImg: 'https://quantumforo.imgix.net/store/store1.png',
-        title: 'Moda'
+        urlImg: '/category/c1.png',
+        title: 'Mascotas'
+    },{
+        urlImg: '/category/c2.png',
+        title: 'Games'
+    },{
+        urlImg: '/category/c3.png',
+        title: 'Fitness'
+    },{
+        urlImg: '/category/c4.png',
+        title: 'Hogar'
+    },{
+        urlImg: '/category/c5.png',
+        title: 'Bicicletas'
     }],
     showShopPlans: true,
     showServicePlans: true
@@ -81,7 +110,7 @@ export const getHome = createAsyncThunk(
                 home = initialState
             ),
             (configHome) => (
-                home = configHome
+                home = initialState
             )
         );
 

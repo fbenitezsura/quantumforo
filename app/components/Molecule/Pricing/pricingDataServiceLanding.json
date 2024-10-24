@@ -41,7 +41,7 @@
       {
         "id": "prod_2",
         "name": "Plan Pro - Servicios",
-        "description": "Ideal servicios mas complejos que necesitan mas espacio para explicar.",
+        "description": "Para complejos que necesitan mas espacio para explicar.",
         "prices": [
           {
             "id": "price_2_monthly",

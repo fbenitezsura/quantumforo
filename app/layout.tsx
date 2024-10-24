@@ -6,6 +6,7 @@ import "./globals.css";
 import '@splidejs/react-splide/css';
 import clsx from 'clsx';
 import { ReduxProvider } from "@providers/redux-provider";
+import GeoLocationProvider from "./providers/gelocation-provider";
 import PopUpNotifications from "@/app/components/Molecule/PopUpNotification/index";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -28,10 +29,12 @@ export default function RootLayout({
           inter.className
         )}>
         <ReduxProvider>
-          <ContainerHeader />
-          {children}
-          <ContainerFooter />
-          <PopUpNotifications />
+          <GeoLocationProvider>
+            <ContainerHeader />
+            {children}
+            <ContainerFooter />
+            <PopUpNotifications />
+          </GeoLocationProvider>
         </ReduxProvider>
       </body>
     </html>

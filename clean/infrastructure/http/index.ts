@@ -1,3 +1,4 @@
 export {
-  apiQForo
+  apiQForo,
+  apiData
 } from './http-client';

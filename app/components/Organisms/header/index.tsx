@@ -21,7 +21,7 @@ const Header: React.FC = ({
             style={{
                 background: isFixed ? '#5c5a5a' : 'transparent',
             }}
-            className={`w-full ${typePosition} bg-gray-100 border-gray-300 pt-6 p-4 z-[100]`}
+            className={`w-full ${typePosition} bg-gray-100 border-gray-300 pt-6 p-4  z-[100]`}
         >
             <div className="max-w-7xl mx-auto flex justify-between items-center h-[80px]">
                 {/* Logo */}
@@ -57,20 +57,8 @@ const Header: React.FC = ({
                         <Link href="/entrepreneurship">
                             <button className="text-white px-4 py-2">Emprendimientos</button>
                         </Link>
-                        <Link href="/external-trade-broker/continentallogistics">
-                            <button className="text-white px-4 py-2">Comercio Exterior</button>
-                        </Link>
-                        <Link href="/aboutUs">
-                            <button className="text-white px-4 py-2">Sobre Nosotros</button>
-                        </Link>
-                        <Link href="/events">
-                            <button className="text-white px-4 py-2">Eventos</button>
-                        </Link>
-                        <Link href="/testimonials">
-                            <button className="text-white px-4 py-2">Testimonios</button>
-                        </Link>
                         <Link href="/contact">
-                            <button className="text-white px-4 py-2">Contacto</button>
+                            <button className="text-white px-4 py-2">Planes</button>
                         </Link>
                         <Link href="/blog">
                             <button className="text-white px-4 py-2">Blog</button>
@@ -79,7 +67,7 @@ const Header: React.FC = ({
                 </div>
 
                 {/* Hamburger Menu - Mobile */}
-                <div className="md:hidden flex items-center">
+                <div className="md:hidden flex items-center mr-6">
                     <button onClick={toggleMenu}>
                         {isOpen ? (
                             <XClose className="h-6 w-6 text-blue-500" />

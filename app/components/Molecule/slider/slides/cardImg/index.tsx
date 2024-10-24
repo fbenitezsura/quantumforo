@@ -1,6 +1,6 @@
 import { SplideSlide } from '@splidejs/react-splide';
 
-const SlideCategory = ({
+const SlideImg = ({
     slideProps
 }) => {
 
@@ -8,14 +8,13 @@ const SlideCategory = ({
         <SplideSlide>
             <div className="w-full flex flex-col items-center">
                 <img
-                    className="h-[80px] w-[80px] hover:border-2 rounded-full cursor-pointer"
+                    className="h-[70%] w-[80%] cursor-pointer"
                     src={slideProps.urlImg}
                     alt="Image 1"
                 />
-                <h2 className="text-center text-xl font-bold mt-1">{slideProps?.title}</h2>
             </div>
         </SplideSlide>
     )
 }
 
-export default SlideCategory;
+export default SlideImg;

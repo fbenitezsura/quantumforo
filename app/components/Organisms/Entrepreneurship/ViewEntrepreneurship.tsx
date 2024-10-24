@@ -19,7 +19,7 @@ const ViewEntrepreneurship = ({
 }) => {
 
     return (
-        <div className="flex flex-col h-screen">
+        <div className="main flex flex-col">
             <div className="w-full">
                 <Banner />
             </div>
@@ -62,7 +62,7 @@ const ViewEntrepreneurship = ({
                     <div className="sticky top-0 h-screen">
                         <MapComponent
                             apiKey="AIzaSyDKamSrVlGgJge4zLs8ET7vF2jPqzkpdPk"
-                            center={{ lat: 39.8283, lng: -98.5795 }}
+                            center={{ lat: -36.82699, lng: -73.04977 }}
                             listStore={listStore}
                             hoveredMarker={hoveredMarker}
                             setHoveredMarker={setHoveredMarker}

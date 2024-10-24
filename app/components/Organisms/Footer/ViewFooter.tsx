@@ -37,8 +37,8 @@ const ViewFooter: React.FC<any> = ({
   };
 
   return (
-    <div className="nc-Footer relative py-16 border-t border-neutral-200 dark:border-neutral-700">
-      <div className="container grid grid-cols-2 gap-y-5 gap-x-5 sm:gap-x-8 md:grid-cols-3 lg:grid-cols-5 lg:gap-x-10 ">
+    <div className="max-w-[1200px] mx-auto border-t-2 py-10">
+      <div className="container grid grid-cols-2 gap-y-5 gap-x-5 sm:gap-x-8 md:grid-cols-3 lg:grid-cols-5 lg:gap-x-10 mx-5 md:mx-0">
         <div className="grid grid-cols-4 gap-5 col-span-2 md:col-span-4 lg:md:col-span-2 lg:flex lg:flex-col">
           <div className="col-span-2 md:col-span-1 ml-5">
             <Logo
@@ -53,23 +53,15 @@ const ViewFooter: React.FC<any> = ({
         </div>
         {[{
           section: {
-            title: 'Company',
+            title: 'Quantum',
             menu: [
               {
-                text: 'About',
+                text: 'Acerca de nosotros',
                 href: 'about',
               },
               {
-                text: 'Contact',
+                text: 'Legal',
                 href: 'contact',
-              },
-              {
-                text: 'Careers',
-                href: 'careers',
-              },
-              {
-                text: 'Press',
-                href: 'press',
               },
               {
                 text: 'Blog',
@@ -79,54 +71,34 @@ const ViewFooter: React.FC<any> = ({
           }
         },{
           section: {
-            title: 'Company',
+            title: 'Support',
             menu: [
               {
-                text: 'About',
+                text: 'Pregunta Frecuentes',
                 href: 'about',
               },
               {
-                text: 'Contact',
+                text: 'Ayuda',
                 href: 'contact',
               },
               {
-                text: 'Careers',
+                text: 'Contacto',
                 href: 'careers',
-              },
-              {
-                text: 'Press',
-                href: 'press',
-              },
-              {
-                text: 'Blog',
-                href: 'blog',
-              },
+              }
             ]
           }
         },{
           section: {
-            title: 'Company',
+            title: 'Productos',
             menu: [
               {
-                text: 'About',
+                text: 'Plan Tienda',
                 href: 'about',
               },
               {
-                text: 'Contact',
+                text: 'Plan Servicios Personales',
                 href: 'contact',
-              },
-              {
-                text: 'Careers',
-                href: 'careers',
-              },
-              {
-                text: 'Press',
-                href: 'press',
-              },
-              {
-                text: 'Blog',
-                href: 'blog',
-              },
+              }
             ]
           }
         }]?.map(renderWidgetMenuItem)}
