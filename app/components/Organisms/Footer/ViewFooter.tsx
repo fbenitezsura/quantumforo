@@ -38,7 +38,7 @@ const ViewFooter: React.FC<any> = ({
 
   return (
     <div className="max-w-[1200px] mx-auto border-t-2 py-10">
-      <div className="container grid grid-cols-2 gap-y-5 gap-x-5 sm:gap-x-8 md:grid-cols-3 lg:grid-cols-5 lg:gap-x-10 mx-5 md:mx-0">
+      <div className="md:container grid grid-cols-2 gap-y-5 gap-x-5 sm:gap-x-8 md:grid-cols-3 lg:grid-cols-5 lg:gap-x-10 mx-5 md:mx-0">
         <div className="grid grid-cols-4 gap-5 col-span-2 md:col-span-4 lg:md:col-span-2 lg:flex lg:flex-col">
           <div className="col-span-2 md:col-span-1 ml-5">
             <Logo
